@@ -42,7 +42,7 @@
 #define APP_SUPPORT	"support@fnord.hu"
 
 /* Displayed on the About form and registration forms.  */
-#define APP_URL		"http://palmgear.com/?xyz=124035"
+#define APP_URL		"http://code.google.com/p/blue-remote/"
 
 
 #ifdef DEBUG_BUILD
