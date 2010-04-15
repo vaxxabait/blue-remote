@@ -75,10 +75,3 @@ extern void *__text__sec4;
 
 
 #endif
-
-/*
- * Local Variables:
- * c-file-style: "lk-palm";
- * End:
- */
-
