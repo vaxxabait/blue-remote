@@ -1,0 +1,50 @@
+/************************************************************************
+ *
+ * Copyright (c) 2006 Karoly Lorentey.  All rights reserved.
+ *
+ * File: Version.c
+ *
+ ***********************************************************************/
+
+#include "Common.h"
+
+#define PRIVATE_INCLUDE
+#include "Defun.h"
+#include "Version.h"
+#undef PRIVATE_INCLUDE
+
+/***********************************************************************
+ *
+ *  CONSTANTS
+ *
+ ***********************************************************************/
+
+#define VERSION_BASE	"1.2"
+#define VERSION_TYPE	".B"
+#define VERSION_BUILD	"@BUILD@"
+
+#ifdef DEBUG_BUILD
+#define VERSION VERSION_BASE VERSION_TYPE VERSION_BUILD
+#else
+#define VERSION VERSION_BASE
+#endif
+
+/***********************************************************************
+ *
+ *  EXPORTED FUNCTION DEFINITIONS
+ *
+ ***********************************************************************/
+
+char *
+f_VersionString (Globals *g) 
+{
+    /* Simple, eh?  */
+    return VERSION;
+}
+
+/*
+ * Local Variables:
+ * c-file-style: "lk-palm";
+ * End:
+ */
+

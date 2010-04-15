@@ -1,0 +1,69 @@
+/***********************************************************************
+ *
+ * Copyright (c) 2006 Karoly Lorentey.  All rights reserved.
+ *
+ * File: Config.h
+ *
+ ***********************************************************************/
+
+/***********************************************************************
+ *
+ *  FEATURES
+ *
+ ***********************************************************************/
+
+/* If not defined, a release version will be built. */
+#undef DEBUG_BUILD
+
+/* If defined, Bluetooth.c will be replaced by a dummy version.  */
+#undef DISABLE_BLUETOOTH
+
+/* Don't enable this.  */
+#undef ENABLE_BACKGROUND_MODE
+
+/* Displayed on the About form.  */
+#define APP_COPYRIGHT	"Copyright \251 2006 Karoly Lorentey"
+
+/* Displayed on the About form and registration forms.  */
+#define APP_SUPPORT	"support@fnord.hu"
+
+/* Displayed on the About form and registration forms.  */
+#define APP_URL		"http://palmgear.com/?xyz=124035"
+
+
+#ifdef DEBUG_BUILD
+/***********************************************************************
+ *
+ *  DEBUG BUILD FEATURES
+ *
+ ***********************************************************************/
+
+#define ERROR_CHECK_LEVEL	ERROR_CHECK_FULL
+#define DEFAULT_LOGLEVEL	LogDebug
+#undef FORCE_LOGLEVEL
+#define ENABLE_LOGFILE
+#undef ENABLE_LOGDISPLAY
+
+
+#else  /* !DEBUG_BUILD */
+/***********************************************************************
+ *
+ *  RELEASE BUILD FEATURES
+ *
+ ***********************************************************************/
+
+#define ERROR_CHECK_LEVEL	ERROR_CHECK_PARTIAL
+#define DEFAULT_LOGLEVEL	LogInfo
+#define FORCE_LOGLEVEL		LogInfo
+#undef ENABLE_LOGFILE
+#undef ENABLE_LOGDISPLAY
+
+#endif	/* !DEBUG_BUILD */
+
+
+/*
+ * Local Variables:
+ * c-file-style: "lk-palm";
+ * End:
+ */
+

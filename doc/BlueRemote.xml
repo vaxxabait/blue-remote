@@ -1,0 +1,2023 @@
+<?xml version='1.0'?>
+<!DOCTYPE book PUBLIC "-//Norman Walsh//DTD DocBk XML V4.4//EN"
+          "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<article>
+  <articleinfo>
+    <title>The BlueRemote User Guide</title>
+    <author>
+      <firstname>Karoly</firstname><surname>Lorentey</surname>
+    </author>
+    <copyright><year>2006</year><holder>Karoly Lorentey</holder></copyright>
+    <releaseinfo>
+      <para>Version 1.2</para>
+      <para>July 26, 2006</para>
+      <para><ulink url="http://palmgear.com/?xyz=124035">http://palmgear.com/?xyz=124035</ulink></para>
+      <para><ulink url="mailto:support@fnord.hu">support@fnord.hu</ulink></para>
+    </releaseinfo>
+  </articleinfo>
+
+  <section>
+    <title>Introduction</title>
+
+    <para>
+      Thank you for downloading BlueRemote!  BlueRemote turns your
+      Palm device into a standard Bluetooth mouse and
+      keyboard.
+    </para>
+
+    <itemizedlist>
+      <listitem>
+	Make your presentations impactful by switching slides while
+	freely moving around! Don't be tied to your notebook!
+      </listitem>
+      <listitem>
+	Enhance your coach potato factor by controlling your PC's DVD
+	player without getting up from your sofa!
+      </listitem>
+      <listitem>
+	Improve your musical taste by switching MP3 tracks from your
+	kitchen on the PC in the living room!
+      </listitem>
+      <listitem>
+	Impress your friends and loved ones with your magical remote
+	control abilities!
+      </listitem>
+    </itemizedlist>
+
+    <variablelist>
+      <varlistentry>
+	<term><emphasis>Works out of the box.</emphasis></term>
+	<listitem>
+	  <para>
+	    BlueRemote works with most operating systems, including
+	    Microsoft Windows XP, Mac OS X and GNU/Linux. There is no
+	    need to install special drivers on the PC: BlueRemote works
+	    fine with the standard drivers that come with your system!
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><emphasis>Emulates a full PC keyboard.</emphasis></term>
+	<listitem>
+	  <para>
+	    Tap on on-screen buttons, use Graffiti input or use your
+	    device's built-in keyboard to enter any key on a standard PC
+	    keyboard.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><emphasis>Familiar and convenient touchpad-like mouse interface.</emphasis></term>
+	<listitem>
+	  <para>
+	    Use your touchscreen just like a notebook's touchpad, or use
+	    your five-way navigator to move the mouse pointer on the
+	    PC.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><emphasis>Enhanced support for the Treo built-in keyboard.</emphasis></term>
+	<listitem>
+	  <para>
+	    Enter shortcuts such
+	    as <keycombo>
+	      <keycap>Control</keycap>
+	      <keycap>C</keycap>
+	    </keycombo>, 
+	    <keycombo>
+	      <keycap>Alt</keycap>
+	      <keycap>F</keycap>
+	    </keycombo>,
+	    or even the mighty 
+	    <keycombo>
+	      <keycap>Control</keycap>
+	      <keycap>Alt</keycap>
+	      <keycap>Del</keycap>
+	    </keycombo> directly on your Treo keyboard!  Works on all OS
+	    5.x Treo devices, including the new Treo 700p.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><emphasis>Free Ten-Day Evaluation Period.</emphasis></term>
+	<listitem>
+	  <para>
+	    Try before you buy!  BlueRemote is free to try for ten
+	    days, after which you will need to purchase a registration
+	    code.
+	  </para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+  </section>
+
+  <section><title>Requirements</title>
+    <para>
+      BlueRemote requires a device running Palm OS 5.x (Garnet) and at
+      least 150KB of available memory.  A device with a QWERTY
+      keyboard is recommended for maximal convenience, although
+      BlueRemote is fully usable without one.
+    </para>
+
+    <para>
+      You can verify your Palm OS version in
+      the <emphasis>Info&hellip;</emphasis> screen of your
+      system launcher.
+    </para>
+
+    <para>
+      To connect to your PC, it must have a Bluetooth radio device.
+      If your PC does not have built-in Bluetooth support, you can
+      pick up a USB Bluetooth dongle at your local hardware store.
+    </para>
+  </section>
+
+  <section><title>Installing BlueRemote on Your Palm Device</title>
+
+    <section><title>Archive Contents</title>
+      The BlueRemote ZIP file contains the following files:
+
+      <variablelist>
+	<varlistentry>
+	  <term><filename>BlueRemote.prc</filename></term>
+	  <listitem>
+	    The BlueRemote program file.
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term><filename>BlueRemote.html</filename></term>
+	  <listitem>
+	    BlueRemote documentation in HTML format.
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term><filename>BlueRemote.pdf</filename></term>
+	  <listitem>
+	    BlueRemote documentation in PDF format.
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term><filename>doc/*</filename></term>
+	  <listitem>
+	    Pictures and other documentation files.
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+
+    <section><title>Installing the PRC file</title>
+
+      <informaltable pgwide="1" frame="none">
+	<tgroup cols='2'>
+	  <colspec colwidth="1*" rowsep="0" colsep="0" align="center" />
+	  <colspec colwidth="3*" rowsep="0" colsep="0" align="left" />
+	  <tbody valign="top">
+	    <row>
+	      <entry>
+		<screenshot>
+		  <graphic fileref="images/quick-install.jpg" 
+			   scale="100" 
+			   />
+		</screenshot>
+	      </entry>
+	      <entry>
+		<para>Use the Palm Quick Install tool that came with
+		  your Palm device to install the
+		  file <filename>BlueRemote.prc</filename>.</para>
+		
+		<para>The Palm Quick Install Tool can be run as a
+		  separate program or from its icon in the Palm Desktop.
+		  Instructions on how to use Palm Quick Install are in
+		  your device manual.</para>
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+    </section>
+  </section>
+
+  <section>
+    <title>Setting Up a Connection to Your PC</title>
+
+    <para>
+      To use BlueRemote, you have to connect it to a PC.  The one-time
+      connection process has to be initiated from the PC, using its
+      Bluetooth software drivers.  In this section we show you how to
+      connect BlueRemote to some popular Bluetooth drivers on several
+      operating systems.
+    </para>
+
+    <para>
+      Note that BlueRemote does not come with its own set of PC
+      drivers, but uses the standard Bluetooth device drivers that
+      come with your PC operating system.  By emulating a standard
+      Bluetooth mouse and keyboard, BlueRemote is able to control the
+      widest variety of Bluetooth systems, including those that we
+      can't write device drivers for.
+    </para>
+
+    <para>
+      Connecting BlueRemote creates a permanent link between the Palm
+      device and the PC.  It is therefore normally unnecessary to
+      repeat the manual connection process after a Palm reset or a PC
+      reboot.  Once it has been connected to a PC, BlueRemote will
+      automatically try to reconnect to it on startup.
+    </para>
+
+    <screenshot>
+      <graphic fileref="images/palm/launcher.jpg" 
+	       scale="100" 
+	       width="100%"
+	       align="center"
+	       />
+    </screenshot>
+
+    <para>
+      Tap on BlueRemote's icon in the system launcher to start
+      BlueRemote.
+    </para>
+
+    <screenshot>
+      <graphic fileref="images/palm/welcome.jpg" 
+	       align="center"
+	       width="50%"
+	       scalefit="0"
+	       />
+    </screenshot>
+
+    <para>
+      On first startup, BlueRemote automatically prompts you
+      to create a new connection.
+      Tap <emphasis>Connect</emphasis>.
+    </para>
+
+    <screenshot>
+      <graphic fileref="images/palm/waiting.jpg" 
+	       align="center"
+	       width="50%"
+	       scalefit="0"
+	       />
+    </screenshot>
+
+    <para>
+      Your Palm device is ready to accept connections from your PC.
+      The dots should be animated while the device is looking for
+      connections.  You will now have to connect to BlueRemote from
+      the PC you want to control.
+    </para>
+    <para>
+      To continue, select the operating system that you want to
+      control with BlueRemote:
+      <itemizedlist>
+	<listitem>
+	  <link linkend="windows">Microsoft Windows XP</link>
+	</listitem>
+	<listitem>
+	  <link linkend="macosx">Apple Mac OS X</link>
+	</listitem>
+	<listitem>
+	  <link linkend="linux">GNU/Linux (BlueZ Bluetooth Stack)</link>
+	</listitem>
+      </itemizedlist>
+      If you don't see your system on the above list, please consult
+      the documentation that came with the PC.  If your device
+      understands the standard Bluetooth HID profile, it is likely
+      BlueRemote will work with it.
+    </para>
+
+    <section id="windows"><title>Connecting to Microsoft Windows XP</title>
+      
+      <para>
+	Windows XP has several Bluetooth driver implementations from
+	various vendors.  Each of them has its own way of connecting
+	to BlueRemote.  In this manual, we show step-by-step
+	instructions to connect BlueRemote with three popular
+	Bluetooth implementations.  First, we have to decide which
+	driver is installed on your PC.
+      </para>
+      
+      <screenshot>
+	<graphic fileref="images/SP2/icon-1.jpg" 
+		 scale="100" 
+		 width="100%"
+		 scalefit="0"
+		 align="center"
+		 />
+      </screenshot>
+
+      <para>
+	Please locate the Bluetooth icon in your system tray's
+	notification area, and right click on it with your
+	mouse.
+      </para>
+      
+      <para>
+	To continue, click on the picture below that is most similar
+	to the popup menu you get.
+      </para>
+  
+      <informaltable pgwide="1" frame="none">
+	<tgroup cols="3">
+	  <colspec colwidth="1*" rowsep="0" colsep="0" align="center" />
+	  <colspec colwidth="1*" rowsep="0" colsep="0" align="center" />
+	  <colspec colwidth="1*" rowsep="0" colsep="0" align="center" />
+	  <tbody valign="bottom">
+	    <row>
+	      <entry>
+		<link linkend="sp2">
+		  <graphic fileref="images/SP2/icon-2.jpg"/>
+		  <para>Microsoft Windows XP SP2</para>
+		</link>
+	      </entry>
+	      <entry>
+		<link linkend="widcomm">
+		  <graphic fileref="images/WIDCOMM/icon-2.jpg"/>
+		  <para>WIDCOMM Bluetooth Stack</para>
+		</link>
+	      </entry>
+	      <entry>
+		<link linkend="bluesoleil">
+		  <graphic fileref="images/BlueSoleil/icon-2.jpg"/>
+		  <para>BlueSoleil Bluetooth Stack</para>
+		</link>
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+      <para>
+	If your popup menu resembles none of the images above, you
+	probably have a Bluetooth stack we did not test with
+	BlueRemote.  BlueRemote will likely still work with your PC,
+	but you will have to consult the Bluetooth section of your PC
+	documentation to learn how to set up the connection.
+      </para>
+      
+      <section id="sp2">
+	<title>Microsoft Windows XP SP2 Bluetooth Stack</title>
+
+	<screenshot>
+	  <graphic fileref="images/SP2/icon-2.jpg" 
+		   scale="100" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Select <emphasis>Add a Bluetooth Device</emphasis>
+	  from the Bluetooth popup menu.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/SP2/wizard-2.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  The <emphasis>Add Bluetooth Device Wizard</emphasis>
+	  appears.  Select <emphasis>My device is ready to be
+	    found</emphasis>, and click <emphasis>Next</emphasis>.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/SP2/wizard-3.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  The wizard will start searching for nearby Bluetooth
+	  devices.  Please wait until the search is complete.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/SP2/wizard-4.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Your Palm device should show up in the result.  If it
+	  doesn't, click <emphasis>Search Again</emphasis> until it
+	  appears in the list.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/SP2/wizard-5.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Select your device and press <emphasis>Next</emphasis>.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/SP2/wizard-6.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  If you have not yet paired your Palm device with your PC,
+	  the <emphasis>Add Bluetooth Device Wizard</emphasis> will
+	  now begin the pairing process.
+	</para>
+
+	<para>
+	  The pairing process sets up a secure connection between your
+	  Palm and PC, so that this complex manual connection process
+	  won't have to be repeated the next time you want to use
+	  BlueRemote.
+	</para>
+
+	<para>
+	  Select <emphasis>Choose a passkey for me</emphasis> and
+	  click <emphasis>Next</emphasis>.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/SP2/wizard-8.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Windows will show you the passkey to enter on the Palm device.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/palm/pairing.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Your Palm device should prompt you with the dialog shown
+	  above.
+	</para>
+
+	<para>
+	  Enter the passkey shown on your PC in the text field.  If
+	  you are sure you entered all the digits correctly, check
+	  the <emphasis>Add to trusted device list</emphasis> checkbox
+	  and tap <emphasis>OK</emphasis>.
+	</para>
+
+	<para>
+	  Your Palm will close the pairing dialog and return to
+	  the <emphasis>Waiting for a connection</emphasis> form.
+	</para>	
+
+	<screenshot>
+	  <graphic fileref="images/SP2/wizard-9.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  The wizard automatically begins installing the necessary
+	  drivers to use BlueRemote.  During this process, you may see
+	  several dialogs momentarily appearing on your screen.  Wait
+	  until they disappear.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/SP2/wizard-10.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Once the wizard has finished connecting to BlueRemote, it
+	  will report the successful connection to you.
+	  Click <emphasis>Finish</emphasis> to exit the wizard.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/palm/keyalpha.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Meanwhile, the Palm device reports that it had connected
+	  to your PC, and the <emphasis>Waiting for a
+	  connection</emphasis> dialog is replaced by the
+	  <emphasis>Alphanumeric Keyboard</emphasis> screen.
+	</para>
+
+	<para>
+	  You are now ready to start controlling you PC with
+	  BlueRemote.
+	</para>
+
+	<tip>
+	  <para>
+	    To skip the rest of the installation instructions and
+	    continue with learning how to use BlueRemote, jump ahead
+	    to the <link linkend="keyboard">Controlling the
+	    Keyboard</link> section.
+	  </para>
+	</tip>
+      </section>
+
+      <!-- ============================================================ -->
+      <section id="widcomm"><title>WIDCOMM Bluetooth Stack</title>
+
+	<screenshot>
+	  <graphic fileref="images/WIDCOMM/icon-2.jpg" 
+		   scale="100" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Select <emphasis>Bluetooth Setup Wizard</emphasis>
+	  from the Bluetooth popup menu.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/WIDCOMM/wizard-2.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  On the first screen of the Bluetooth Setup Wizard,
+	  select <emphasis>I want to find a specific Bluetooth device
+	    and configure how this computer will use its
+	    services</emphasis>. Click <emphasis>Next</emphasis>.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/WIDCOMM/wizard-4.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  You get a list of nearby Bluetooth devices.  Your Palm
+	  device should appear on the list.  If it doesn't, hit
+	  <emphasis>Search Again</emphasis> until the display is
+	  updated.  If this does not help, try turning off and on your
+	  PC's Bluetooth radio and restarting the procedure.  Make
+	  sure BlueRemote is displaying its <emphasis>Waiting for a
+	  connection&hellip;</emphasis> screen during this process.
+	</para>
+
+	<para>
+	  When your Palm device appears on the list, select it and
+	  click <emphasis>Next</emphasis>.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/palm/waiting2.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  During this process, occasionally your Palm device will
+	  display some messages below the blue dots.  These messages
+	  indicate the status of the connection to reassure you that
+	  the process is progressing.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/WIDCOMM/wizard-6.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  If you have not yet paired your Palm device with your PC, the
+	  Bluetooth Setup Wizard will now begin the pairing process.  
+	</para>
+
+	<para>
+	  The pairing process sets up a secure connection between your
+	  Palm and PC, so that this complex manual connection process
+	  won't have to be repeated the next time you want to use
+	  BlueRemote.
+	</para>
+
+	<para>
+	  To start pairing, you have to choose a PIN code (also called
+	  a <emphasis>passkey</emphasis>).  Choose a number of your
+	  choice; any number will do.  (Note that once the pairing
+	  process is done, the PIN code is discarded.  It is not
+	  necessary for you to remember it after the connection has
+	  been set up.)
+	</para>
+  
+	<para>
+	  Type in the PIN code of your choice, and
+	  hit <emphasis>Initiate Pairing</emphasis>.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/palm/pairing.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Your Palm device should prompt you with the dialog shown
+	  above.
+	</para>
+
+	<para>
+	  Enter the same PIN code you entered on your PC in the text
+	  field.  If you are sure you entered all the digits
+	  correctly, check the <emphasis>Add to trusted device
+	  list</emphasis> checkbox and tap <emphasis>OK</emphasis>.
+	</para>
+
+	<para>
+	  Your Palm will close the pairing dialog and return to
+	  the <emphasis>Waiting for a connection</emphasis> form.
+	</para>	
+
+	<screenshot>
+	  <graphic fileref="images/WIDCOMM/wizard-9.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Return to your PC which should now display a list of
+	  services available on your Palm device.  Select BlueRemote
+	  (the only entry in the list), and
+	  click <emphasis>Finish</emphasis>.
+	</para>
+
+	<para>
+	  Your PC will now automatically install the drivers necessary
+	  to connect to a Bluetooth peripheral.  During this process,
+	  you may see several dialogs momentarily appearing on your
+	  screen.  Wait until they disappear.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/palm/keyalpha.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Meanwhile, the Palm device reports that it had connected
+	  to your PC, and the <emphasis>Waiting for a
+	  connection</emphasis> dialog is replaced by the
+	  <emphasis>Alphanumeric Keyboard</emphasis> screen.
+	</para>
+
+	<para>
+	  Once your PC completes the installation process, BlueRemote
+	  is ready to control your PC.
+	</para>
+
+	<tip>
+	  <para>
+	    To skip the rest of the installation instructions and
+	    continue with learning how to use BlueRemote, jump ahead
+	    to the <link linkend="keyboard">Controlling the
+	    Keyboard</link> section.
+	  </para>
+	</tip>
+      </section>
+
+      <!-- ============================================================ -->
+      <section id="bluesoleil"><title>BlueSoleil Bluetooth Stack</title>
+
+	<screenshot>
+	  <graphic fileref="images/BlueSoleil/icon-2.jpg" 
+		   scale="100" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Select <emphasis>Display</emphasis> from the Bluetooth popup
+	  menu.
+	</para>
+	
+	<screenshot>
+	  <graphic fileref="images/BlueSoleil/stage-2.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  You get the Main Window of BlueSoleil.  It probably won't
+	  show your Palm device yet, so refresh the display by
+	  pressing <keycap>F5</keycap>, or selecting <emphasis>Refresh
+	  Devices</emphasis> from the <emphasis>View</emphasis> menu.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/BlueSoleil/stage-3.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+	
+	<para>
+	  Your Palm device should show up on the ring around the
+	  orange center representing your PC.  If it doesn't appear,
+	  hit <keycap>F5</keycap> again until it does.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/BlueSoleil/stage-3-1.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  To begin the pairing process, right-click on your device and
+	  select <emphasis>Pair Device</emphasis>.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/BlueSoleil/stage-3-3.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  The pairing process sets up a secure connection between your
+	  Palm and PC, so that this complex manual connection process
+	  won't have to be repeated the next time you want to use
+	  BlueRemote.
+	</para>
+
+	<para>
+	  To start pairing, you have to choose a passkey.  Choose a
+	  random number; any number will do.  (Note that once the
+	  pairing process is done, the passkey is discarded.  It is
+	  not necessary for you to remember it after the connection
+	  has been set up.)
+	</para>
+
+	<para>
+	  In the dialog that appears, enter the passkey of your
+	  choice, and hit <emphasis>OK</emphasis>.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/palm/pairing.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Your Palm device should prompt you with the dialog shown
+	  above.
+	</para>
+
+	<para>
+	  Enter the same passkey you entered on your PC in the text
+	  field.  If you are sure you entered all the digits
+	  correctly, check the <emphasis>Add to trusted device
+	  list</emphasis> checkbox and tap <emphasis>OK</emphasis>.
+	</para>
+
+	<para>
+	  Your Palm will close the pairing dialog and return to
+	  the <emphasis>Waiting for a connection</emphasis> form.
+	</para>	
+
+	<screenshot>
+	  <graphic fileref="images/BlueSoleil/stage-3-4.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  BlueSoleil confirms that the pairing process completed
+	  successfully by displaying a little red mark beside the name
+	  of your device.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/BlueSoleil/stage-4.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Note how the little mouse icon above the device ring is
+	  highlighted with a yellow frame.  This means that BlueSoleil
+	  has recognized that your Palm device is a Bluetooth
+	  peripheral.
+	</para>
+
+	<para>
+	  If the mouse icon is not highlighted, right click on your
+	  device and click <emphasis>Refresh Services</emphasis>.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/BlueSoleil/stage-6.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Now connect to your device by right clicking on the device
+	  icon and selecting <emphasis>Connect -- Bluetooth Human
+	    Interface Device Service</emphasis>.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/BlueSoleil/stage-7.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Your PC will now automatically install the drivers necessary to
+	  connect to a Bluetooth peripheral.  Once the process has
+	  finished, BlueSoleil will update its display to show that
+	  the device has been connected.
+	</para>
+
+	<screenshot>
+	  <graphic fileref="images/palm/keyalpha.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  Meanwhile, the Palm device reports that it had connected
+	  to your PC, and the <emphasis>Waiting for a
+	  connection</emphasis> dialog is replaced by the
+	  <emphasis>Alphanumeric Keyboard</emphasis> screen.
+	</para>
+
+	<para>
+	  Once your PC completes the installation process, BlueRemote
+	  is ready to control your PC.
+	</para>
+
+	<tip>
+	  <para>
+	    To skip the rest of the installation instructions and
+	    continue with learning how to use BlueRemote, jump ahead
+	    to the <link linkend="keyboard">Controlling the
+	    Keyboard</link> section.
+	  </para>
+	</tip>
+      </section>
+    </section>
+
+    <!-- ============================================================ -->
+    <section id="macosx"><title>Connecting to Apple Mac OS X</title>
+
+
+      <para>
+	You can connect BlueRemote to your Mac using the Bluetooth
+	Setup Assistant.  The assistant is located in the Utilities
+	folder.  Please consult your system manuals for detailed
+	instructions.
+      </para>
+
+      <tip>
+	<para>
+	  To skip the rest of the installation instructions and
+	  continue with learning how to use BlueRemote, jump ahead to
+	  the <link linkend="keyboard">Controlling the Keyboard</link>
+	  section.
+	</para>
+      </tip>
+    </section>
+   
+    <!-- ============================================================ -->
+
+    <section id="linux"><title>Connecting to GNU/Linux</title>
+      <para>
+	To use BlueRemote to control Linux, you will have to use a
+	recent version of the <ulink url="http://www.bluez.org">BlueZ
+	Bluetooth stack</ulink>.  We have tested BlueRemote with BlueZ
+	2.25 and 3.1, but later versions should work equally well.
+	BlueZ should already be included in your Linux distribution,
+	although the package may not be installed by default.
+      </para>
+
+      <para>
+	With the BlueZ stack, you will be able to control both the
+	Linux text console and X server input.
+      </para>
+
+      <para>
+	To get the full feature set of BlueRemote, we suggest to use
+	the latest kernel patches available from
+	<ulink
+	url="http://www.bluez.org/patches.html"><emphasis>http://www.bluez.org/patches.html</emphasis></ulink>.
+	BlueRemote will connect to your PC in a limited <emphasis>Boot
+	Protocol</emphasis> mode unless the kernel patches are
+	installed.  Some features of BlueRemote may not work in Boot
+	Protocol mode.
+      </para>
+
+      <para>
+	Once BlueZ is installed on your PC, you can connect to
+	BlueRemote using the <filename>hidd</filename> command-line
+	utility.  You will have to know the Bluetooth address of your
+	Palm device, which you can get using
+	the <filename>hcitool</filename> utility.  You will have to
+	become <filename>root</filename> in order to add a new HID
+	device to your system.
+      </para>
+
+      <screen>
+# hcitool scan --flush
+Scanning ...
+	00:07:E0:3D:B2:91	Treo 650
+# hidd --connect 00:07:E0:3D:B2:91
+#
+      </screen>
+
+      <para>
+	Note that the <filename>hidd</filename> utility does not print
+	anything on the terminal on success.
+      </para>
+
+      <para>
+	Linux will remember that you have connected BlueRemote and it
+	is therefore not necessary to repeat this process after a
+	reboot.
+      </para>
+    </section>
+
+    <section>
+      <title>Reconnecting a Previous Connection</title>
+
+      <para>
+	Once connected, your PC and BlueRemote will remember their
+	connection, and will let you reconnect them without repeating
+	the pairing process.  To support this, BlueRemote
+	automatically attempts to restore the last connection on
+	startup.  If this fails, or you manually disconnect
+	BlueRemote, you will be presented with the screen below.
+      </para>
+
+      <screenshot>
+	<graphic fileref="images/palm/select.jpg" 
+		 width="100%"
+		 scalefit="0"
+		 align="center"
+		 />
+      </screenshot>
+      
+      <para>
+	From this screen, you can select any of the previously
+	connected PCs.  Tap <emphasis>Connect</emphasis> to reconnect
+	to the selected PC.
+      </para>
+
+      <para>
+	If you want to connect to a new PC, simply
+	tap <emphasis>New</emphasis> and the connection process will
+	start again.
+      </para>
+
+      <para>
+	Tapping on the <emphasis>Details</emphasis> button will show
+	you detailed information about the currently selected PC, like
+	its Bluetooth address, or the last time you connected to it.
+      </para>
+
+      <screenshot>
+	<graphic fileref="images/palm/details.jpg" 
+		 width="100%"
+		 scalefit="0"
+		 align="center"
+		 />
+      </screenshot>
+      
+      <para>
+	You can use the <emphasis>Delete</emphasis> button to delete
+	the connection currently displayed in
+	the <emphasis>Details</emphasis> form.
+      </para>
+
+
+      <para>
+	When you tap <emphasis>Connect</emphasis> on the PC selection
+	screen, the <emphasis>Connecting to</emphasis> screen will
+	appear with the familiar blue dots.
+      </para>
+
+      <screenshot>
+	<graphic fileref="images/palm/connecting.jpg" 
+		 width="100%"
+		 scalefit="0"
+		 align="center"
+		 />
+      </screenshot>
+      
+      <para>
+	This time, however, it won't be necessary for you to go to
+	your PC and go through a series of dialog boxes: in most cases
+	the reconnection will automatically succeed in a few seconds.
+      </para>
+
+      <para>
+	Sometimes BlueRemote might report that the reconnection
+	failed.  In this case, you have to reconnect the devices by
+	repeating the manual connection process above.
+      </para>
+
+    </section>
+  </section>
+
+  <!-- ============================================================ -->
+
+  <section id="keyboard">
+    <title>Controlling the Keyboard</title>
+
+    <para>
+      In this section and the next, we describe the heart of
+      BlueRemote: the control screens that you will use to control the
+      keyboard and mouse pointer of your PC.
+    </para>
+
+    <para>
+      BlueRemote emulates a standard 104-key PC keyboard.  You can
+      press keys on the PC by any of the following three methods:
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    Tapping on the on-screen buttons presented by
+	    BlueRemote.
+	  </para>
+	  <para>
+	    Some infrequently used keys are only available by this
+	    method.
+	  </para>
+	  <para>
+	    See <xref linkend="keytap"/>.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    Drawing Graffiti characters in the input area of your
+	    device (if available).
+	  </para>
+
+	  <para>
+	    See <xref linkend="keygraffiti"/>.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    Using the built-in QWERTY keyboard of your device (if available).
+	  </para>
+	  <para>
+	    This is perhaps the most convenient input method.
+	  </para>
+	  <para>
+	    See <xref linkend="keybuiltin"/>.
+	  </para>
+	</listitem>
+      </itemizedlist>
+    </para>
+
+    <para>
+      Note that while the key captions shown by BlueRemote correspond
+      to a US keyboard layout, the actual letters and symbols that
+      appear on your PC depend on the keyboard layout that is
+      currently set.  (This is a limitation of the Bluetooth HID
+      protocol that is implemented by BlueRemote.)  While this may
+      sometimes cause confusion, it also allows you to enter accented
+      national characters or special symbols that are not normally
+      found on a US layout.
+    </para>
+
+    <section id="keytap">
+      <title>Using On-Screen Buttons to Control the Keyboard</title>
+      
+      <para>
+	The 104 keys on a standard US PC keyboard layout would not fit
+	comfortably on the screen of your Palm device.  Therefore, we
+	distributed them on four separate screens in
+	BlueRemote: <emphasis>Alpha</emphasis>, <emphasis>Numeric</emphasis>,
+	<emphasis>Cursor</emphasis> and <emphasis>Function</emphasis>.
+      </para>
+
+      <para>
+	To switch between screens, use the push buttons displayed at
+	the top of each screen, or, if you prefer, press the second
+	hard key to cycle between screens.
+      </para>
+
+      <para>
+	When you first connect to a PC, BlueRemote displays the
+	<emphasis>Alpha</emphasis> screen shown below.  We will use
+	this screen to demonstrate the elements common to all screens
+	in Keyboard Mode.
+      </para>
+
+      <screenshot>
+	<graphic fileref="images/palm/keyalpha2.jpg" 
+		 width="100%"
+		 scalefit="0"
+		 align="center"
+		 />
+      </screenshot>
+      
+      <orderedlist>
+	<listitem>
+	  <para>
+	    You can use the mode selection pop-up list to switch
+	    between controlling the keyboard and mouse.  You can also
+	    toggle between these modes by pressing the first
+	    (leftmost) hard button on your device.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    To switch between different screens in the keyboard mode,
+	    tap on the selection buttons.  For more efficient access
+	    you can use the second hard button to cycle between these
+	    screens.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    The main area shows the keyboard buttons available on the
+	    specific screen you are on.  This area is different for
+	    each screen available in Keyboard mode.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    The bottom area is common between all Keyboard screens and
+	    shows a selection of the most frequently used buttons and
+	    all available keyboard modifiers.  From left to right, the
+	    top row consists of
+	    the <keycap>Escape</keycap>, <keycap>Tab</keycap>
+	    and <keycap>Backspace</keycap> buttons.  The bottom row
+	    contains special <quote>sticky</quote> toggle buttons for
+	    the modifier keys.  The rightmost button spans both rows:
+	    it's <keycap>Enter</keycap>.
+	  </para>
+	</listitem>
+      </orderedlist>
+
+      <section><title>The Alpha Screen</title>
+	<screenshot>
+	  <graphic fileref="images/palm/keyalpha.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+
+	<para>
+	  The <emphasis>Alpha</emphasis> screen lets you enter letters
+	  of the alphabet, digits, and punctuation symbols.  It also
+	  has both <keycap>Left Alt</keycap> and <keycap>Right
+	  Alt</keycap> modifier keys, to let you enter special
+	  characters on international keyboard layouts.
+	</para>
+      </section>
+
+      <section><title>The Numeric Screen</title>
+	<screenshot>
+	  <graphic fileref="images/palm/keynumeric.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+      
+	<para>
+	  The second screen in Keyboard mode shows the keys on the
+	  numeric keypad.  The <keycap>NumLock</keycap> key
+	  (marked <keycap>NumLk</keycap>) is drawn with a blue
+	  background when the <keycap>NumLock</keycap> LED is enabled.
+	</para>
+      </section>
+
+      <section><title>The Cursor Screen</title>
+	<screenshot>
+	  <graphic fileref="images/palm/keycursor.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+	
+	<para>
+	  The third screen in Keyboard mode is for navigation.  Besides
+	  the four arrow keys, it also
+	  includes <keycap>Home</keycap>, <keycap>End</keycap>,
+	  <keycap>PageUp</keycap> and <keycap>PageDown</keycap>.  Note
+	  that all these keys are repeating buttons: when you hold your
+	  pen on them, they send keyboard presses continously in regular
+	  intervals.
+	</para>
+	
+	<para>
+	  If your device has a 5-way navigator, you can also use it to
+	  control the arrow keys.  The center button is for
+	  the <keycap>Enter</keycap> key.
+	</para>
+      </section>
+
+      <section><title>The Function Screen</title>
+
+	<screenshot>
+	  <graphic fileref="images/palm/keyfunction.jpg" 
+		   width="100%"
+		   scalefit="0"
+		   align="center"
+		   />
+	</screenshot>
+      
+	<para>
+	  The fourth and final screen in Keyboard mode is for function
+	  keys.  Beside the twelve numbered keys
+	  from <keycap>F1</keycap> to <keycap>F12</keycap>, it also
+	  contains the set of special keys normally found above the
+	  arrow keys on a PC keyboard.  <keycap>Caps Lock</keycap>
+	  (labeled <keycap>CapsLK</keycap>) and
+	  <keycap>Scroll Lock</keycap> (marked <keycap>ScrLk</keycap>)
+	  is also shown here, along with a copy
+	  of <keycap>NumLk</keycap> from the keypad.  Beside toggling
+	  the lock status, these three keys also indicate the current
+	  state.
+	</para>
+
+	<para>
+	  The button between <keycap>PrintScreen</keycap>
+	  (<keycap>PrScr</keycap>) and <keycap>Pause</keycap> is the
+	  <keycap>Task</keycap> button.
+	</para>
+      </section>
+    </section>
+
+    <section id="keygraffiti">
+      <title>Using Graffiti to Control the Keyboard</title>
+
+      <para>
+	If your device has a Graffiti input area, you can draw
+	letters, numbers and symbols there as usual.
+      </para>
+
+      <para>
+	BlueRemote automatically converts symbols and
+	punctuation characters to the corresponding keystroke on a
+	US keyboard layout.  For example, if you enter
+	the <keycap>$</keycap> symbol, BlueRemote will send 
+	<keycombo><keycap>Shift</keycap>
+	  <keycap>4</keycap></keycombo> to the PC.  Remember that
+	  BlueRemote expects a US keyboard layout; if you use another
+	  layout, then the symbols that appear on your PC may be
+	  different from what you entered on your Palm.
+      </para>
+    </section>
+
+      
+    <section id="keybuiltin">
+      <title>Using Your Device's Builtin Keyboard</title>
+      
+      <para>
+	If your device has a builtin keyboard, you can use it to
+	control your PC's keyboard.  The keyboard layout is
+	demonstrated below on a Treo 650 device.  Other devices have
+	similar layouts.
+      </para>
+
+      <graphic fileref="images/treo-650-kbd.jpg" 
+	       width="100%"
+	       scalefit="0"
+	       align="center"
+	       />
+
+      <para>
+	Note that the <keycap>Option</keycap> key retains its original
+	meaning so that you can input numbers, punctuation and other
+	symbols in the familiar way.  However, BlueRemote redefines
+	the other modifiers to emulate standard modifiers on a PC
+	keyboard. See <xref linkend="layout"/> for a list of keyboard
+	mappings.
+      </para>
+
+      <table id="layout" frame="topbot" pgwide="0">
+	<title>Treo keyboard combinations.</title>
+	<tgroup cols="2" align="left" colsep="0" rowsep="0">
+	  <colspec colwidth="120pt" colname="PC key"/>
+	  <colspec colwidth="120pt" colname="Treo key" />
+	  <thead align="center">
+	    <row rowsep="1">
+	      <entry><emphasis>PC key</emphasis></entry>
+	      <entry><emphasis>Treo key</emphasis></entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry><keycap>Up Arrow</keycap></entry>
+	      <entry>5-way <keycap>Up</keycap></entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Down Arrow</keycap></entry>
+	      <entry>5-way <keycap>Down</keycap></entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Left Arrow</keycap></entry>
+	      <entry>5-way <keycap>Left</keycap></entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Right Arrow</keycap></entry>
+	      <entry>5-way <keycap>Right</keycap></entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Enter</keycap></entry>
+	      <entry>
+		<keycap>Enter</keycap> 
+		or 5-way <keycap>Center</keycap>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Shift</keycap></entry>
+	      <entry><keycap>Shift</keycap></entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Alt</keycap></entry>
+	      <entry><keycap>Alt</keycap></entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Control</keycap></entry>
+	      <entry><keycap>0</keycap> (zero)</entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Win</keycap></entry>
+	      <entry><keycap>.</keycap> (period)</entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Tab</keycap></entry>
+	      <entry>
+		<keycombo>
+		  <keycap>Option</keycap>
+		  <keycap>Space</keycap>
+		</keycombo>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Escape</keycap></entry>
+	      <entry>
+		<keycombo>
+		  <keycap>Option</keycap>
+		  <keycap>Backspace</keycap>
+		</keycombo>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Page Up</keycap></entry>
+	      <entry>
+		<keycombo>
+		  <keycap>Option</keycap>
+		  <keycap>Up</keycap>
+		</keycombo>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Page Down</keycap></entry>
+	      <entry>
+		<keycombo>
+		  <keycap>Option</keycap>
+		  <keycap>Down</keycap>
+		</keycombo>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry><keycap>Home</keycap></entry>
+	      <entry>
+		<keycombo>
+		  <keycap>Option</keycap>
+		  <keycap>Left</keycap>
+		</keycombo>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry><keycap>End</keycap></entry>
+	      <entry>
+		<keycombo>
+		  <keycap>Option</keycap>
+		  <keycap>Right</keycap>
+		</keycombo>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry><keycap>0</keycap> (zero)</entry>
+	      <entry>
+		<keycombo>
+		  <keycap>Option</keycap>
+		  <keycap>0</keycap>
+		</keycombo>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry><keycap>.</keycap> (period)</entry>
+	      <entry>
+		<keycombo>
+		  <keycap>Option</keycap>
+		  <keycap>.</keycap>
+		</keycombo>
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+    </section>
+
+  </section>
+  
+  <section>
+    <title>Controlling the Mouse Pointer</title>
+
+    <para>
+      BlueRemote emulates a standard three-button PC mouse with a
+      scrolling wheel.
+    </para>
+
+    <screenshot>
+      <graphic fileref="images/palm/mouse.jpg" 
+	       width="100%"
+	       scalefit="0"
+	       align="center"
+	       />
+    </screenshot>
+    
+    <para>
+      You can use the large rectangular area just like a touchpad on a
+      notebook computer: drag your finger or stylus across it to move
+      the pointer, and tap to click with the currently selected mouse
+      button.
+    </para>
+
+    <para>
+      You can select which mouse button your next tap will click with
+      the buttons below the touchpad area.  To support the most
+      frequent usage case, the middle and right buttons automatically
+      switch back to the left (default) button after you click.
+    </para>
+
+    <para>
+      To drag with the mouse, check the <emphasis>Drag</emphasis>
+      checkbox, position the pointer to the place where you want to
+      start dragging, and tap to press and hold the mouse button.  Now
+      move the pointer where you want to stop dragging, and tap again
+      to release the button.
+    </para>
+
+    <para>
+      You can use the triangular arrows to the right of the touchpad to
+      scroll with the wheel.
+    </para>  
+
+    <para>
+      In Mouse mode the 5-way navigator is redefined to control the
+      mouse pointer.  The center key clicks with the left mouse
+      button.
+    </para>
+
+    <para>
+      If your device has a side key, you can use it to click with the
+      left mouse button. The volume keys (if available) control the
+      scrolling wheel.  (Note that these keys also work in Keyboard
+      mode.)
+    </para>
+  </section>
+
+  <section>
+    <title>Configuring BlueRemote</title>
+    
+    <section>
+       <title>The Preferences Dialog</title>
+
+       <screenshot>
+	 <graphic fileref="images/palm/menu-options.jpg" 
+		  width="100%"
+		  scalefit="0"
+		  align="center"
+		  />
+       </screenshot>
+    
+       <para>
+	 The <emphasis>Options--Preferences&hellip;</emphasis> menu
+	 item displays the <emphasis>Preferences</emphasis> panel that
+	 you can use to configure some aspects of BlueRemote's
+	 behaviour.
+       </para>
+
+       <screenshot>
+	 <graphic fileref="images/palm/preferences.jpg" 
+		  width="100%"
+		  scalefit="0"
+		  align="center"
+		  />
+       </screenshot>
+
+       <variablelist>
+	 <varlistentry>
+	   <term><emphasis>Automatically reconnect to the selected PC
+	       on startup</emphasis></term>
+	   <listitem>
+	     <para>
+	       If you want BlueRemote to automatically reconnect to the
+	       last PC on startup, enable the first checkbox.
+	     </para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><emphasis>Override default hard key
+	   behaviour</emphasis></term>
+	   <listitem>
+	     <para>
+	       If you would like BlueRemote to override the default
+	       behaviour of the hard keys on your device, enable the
+	       second checkbox.  Note that some of BlueRemote's
+	       advanced functionality will be inaccessible unless you
+	       enable this option.
+	     </para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><emphasis>Turn off auto-off timer while
+	   connected</emphasis></term>
+	   <listitem>
+	     <para>
+	       If you want BlueRemote to disable your device's auto-off
+	       timer while a connection is active, set the third
+	       checkbox.  You can still press the power button to
+	       manually turn off your device.  Note that enabling this
+	       option may drain your batteries if you leave BlueRemote
+	       unattended.
+	     </para>
+	   </listitem>
+	 </varlistentry>
+       </variablelist>
+
+       <para>
+	 All three options are enabled by default.
+       </para>
+    </section>
+
+    <section>
+      <title>Advanced Preferences</title>
+
+      <para>
+	The <emphasis>Preferences</emphasis> panel includes a button
+	labeled <emphasis>Advanced</emphasis>.  By tapping on this
+	button, you get to the <emphasis>Advanced
+	Preferences</emphasis> panel.
+      </para>
+
+      <screenshot>
+	<graphic fileref="images/palm/advanced.jpg" 
+		 width="100%"
+		 scalefit="0"
+		 align="center"
+		 />
+      </screenshot>
+
+       <variablelist>
+	 <varlistentry>
+	   <term><emphasis>Device Subclass</emphasis></term>
+	   <listitem>
+	     <para>
+	       The Device Class is a parameter of Bluetooth devices
+	       that gives a rough approximation of the type of the
+	       device.  For Human Interface Devices, the device
+	       subclass indicates if the device is a keyboard, a
+	       mouse, or some other peripheral type.
+	     </para>
+	     
+	     <para>
+	       BlueRemote includes the device subclass value in its
+	       service descriptor record.  The value of this parameter
+	       doesn't normally matter, but some Bluetooth software
+	       may require a specific value here to be able to connect
+	       to BlueRemote.  If you have trouble connecting
+	       BlueRemote, experimenting with the Device Subclass
+	       setting may work around the problem.
+	     </para>
+
+	     <para>
+	       BlueRemote advertises the <emphasis>Combo</emphasis>
+	       subclass by default.
+	     </para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><emphasis>Override Device ID</emphasis></term>
+	   <listitem>
+	     <para>
+	       By overriding the Bluetooth Device ID, BlueRemote is
+	       able to make your Palm device look like a real
+	       Bluetooth peripheral to other devices.
+	     </para>
+
+	     <para>
+	       This usually makes it easier to connect your Palm as a
+	       peripheral, but it might make it harder to use the
+	       Bluetooth connection for anything else than remote
+	       control.  Therefore, this setting is disabled by
+	       default.  When the option is disabled, your Palm will
+	       still look like a Palm via Bluetooth; it will advertise
+	       its peripheral capabilities by the standard service
+	       discovery protocol.
+	     </para>
+
+	     <para>
+	       If you have trouble connecting BlueRemote to a
+	       particular device, try setting this option.  Note that
+	       the override is only active while BlueRemote is
+	       running.
+	     </para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term><emphasis>Reset</emphasis></term>
+	   <listitem>
+	     The <emphasis>Reset</emphasis> button restores all
+	     settings on the <emphasis>Advanced Preferences</emphasis>
+	     panel to their default values.
+	   </listitem>
+	 </varlistentry>
+       </variablelist>
+    </section>
+  </section>
+
+  <section id="register">
+    <title>Registering BlueRemote</title>
+
+    <para>
+      Sometimes when you start up BlueRemote, it greets you with a
+      request to register it.
+    </para>
+
+    <screenshot>
+      <graphic fileref="images/palm/please-register.jpg" 
+	       width="100%"
+	       scalefit="0"
+	       align="center"
+	       />
+    </screenshot>
+    
+    <para>
+      You are free to try BlueRemote for ten days without registering it.
+      If you want to use it longer, please purchase a registration code at
+      <ulink
+      url="http://palmgear.com/?xyz=124035">http://palmgear.com/?xyz=124035</ulink>.
+      If you register BlueRemote, you will be able to use it as long
+      as you like, and if a new version of BlueRemote is released, we
+      will provide you with free upgrades for at least one full year.
+    </para>
+
+    <para>
+      Your registration code will be 8 characters long and it will
+      consist of a mixture of digits and upper-case
+      letters.  <keycap>LK8CVB61</keycap> is an example of a
+      registration code.  Note that the code is tied to your HotSync
+      id; if you later change your HotSync id, your code will not
+      work.  In this case, please contact us at
+      <ulink url="mailto:support@fnord.hu">support@fnord.hu</ulink>
+      and describe the problem: we will likely be able to supply you
+      with a replacement code.  (Note that we can only give you a
+      limited number of replacement codes.)
+    </para>
+
+    <para>
+      Once you obtain a registration key, select
+      <emphasis>Options--Register</emphasis> from BlueRemote's menu.
+      If your copy of BlueRemote has expired, it will automatically
+      start up with the registration screen.
+    </para>
+
+    <screenshot>
+      <graphic fileref="images/palm/menu-options.jpg" 
+	       width="100%"
+	       scalefit="0"
+	       align="center"
+	       />
+    </screenshot>
+    
+    <para>
+      The registration form displays your HotSync ID and prompts you to
+      enter your registration code.  Make sure you enter the code exactly
+      as it was sent to you.
+    </para>
+
+    <screenshot>
+      <graphic fileref="images/palm/register-1.jpg" 
+	       width="100%"
+	       scalefit="0"
+	       align="center"
+	       />
+    </screenshot>
+    
+    <para>
+      If the registration code you entered matches your HotSync id, you
+      will be presented with a Thank You form, and BlueRemote becomes
+      unlocked.
+    </para>
+
+    <para>
+      You can verify your registration status and view your
+      registration code at any time by
+      selecting <emphasis>Options--Register</emphasis> from the menu.
+    </para>
+
+    <para>
+      Thank you for registering BlueRemote!
+    </para>
+  </section>
+
+  <section>
+    <title>Support Information</title>
+
+    <para>
+      If your copy of BlueRemote has expired, please visit
+      <ulink
+      url="http://palmgear.com/?xyz=124035">http://palmgear.com/?xyz=124035</ulink>
+      and purchase a registration code.  See
+      <xref linkend="register"/> for details of the registration
+      process.  If a new version of BlueRemote is available, you can
+      download it at the same address.
+    </para>
+
+    <para>
+      If you have a problem with BlueRemote, please don't hesitate to
+      write to us
+      at <ulink url="support@fnord.hu">support@fnord.hu</ulink>.  We
+      will do our best to answer every problem and fix every bug you
+      find.  Please include in your message the version number of
+      BlueRemote (available in
+      the <emphasis>Options---About</emphasis> menu item or in the
+      system launcher, the exact make and model of the Palm device you
+      use, and the operating system you wanted to connect to.
+    </para>
+
+    <para>
+      Thank you for very much for using BlueRemote.  We hope it suits
+      your needs well.
+    </para>
+  </section>
+
+  <section>
+    <title>Version History</title>
+
+    <para>This section lists the user-visible changes in each public
+      release of BlueRemote.</para>
+
+    <variablelist>
+      <varlistentry>
+	<term>Version 1.2 (July 26, 2006)</term>
+	<listitem>
+	  <para>
+	    Fixed old-style 5-way navigation on the PC selection form.
+	  </para>
+	  <para>
+	    Fixed fatal alert ("Chunk over-locked") on BlueRemote's
+	    15th startup.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>Version 1.1 (July 20, 2006)</term>
+	<listitem>
+	  <para>
+	    Fixed a bug in which turning off the device at certain
+	    points during the execution of BlueRemote would later
+	    cause the device to freeze requiring a soft reset.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>Version 1.0 (July 15, 2006)</term>
+	<listitem>
+	  <para>
+	    Initial release of BlueRemote.
+	  </para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+
+  </section>
+  
+  <section>
+    <title>Software License Agreement</title>
+
+    <para>
+      This is a legal agreement between you, the end user, and Karoly
+      Lorentey (the "DEVELOPER").  The software programs and
+      documentation ("the SOFTWARE") provided by Karoly Lorentey are
+      licensed to the original customer.  Please read this license
+      agreement.  Using the SOFTWARE indicates that you accept these
+      terms.
+    </para>
+
+    <para>
+      GRANT OF LICENSE: 
+    </para>
+
+    <para>
+      (A) TRIAL VERSION: the DEVELOPER grants you the nonexclusive right to
+      use the SOFTWARE for a period of no more than ten (10) days, to run
+      consecutively from the date of first use.
+    </para>
+
+    <para>
+      (B) FULL VERSION: In exchange for the payment of a registration fee,
+      the DEVELOPER grants you the perpetual nonexclusive right to use the
+      SOFTWARE on a single Palm OS handheld computer.  If the SOFTWARE is
+      installed on more than one handheld computer, you must pay an
+      additional registration fee for each copy.
+    </para>
+
+    <para>
+      COPYRIGHT: The SOFTWARE is owned by the DEVELOPER and is protected by
+      United States copyright laws and international treaty
+      provisions.
+    </para>
+
+    <para>
+      LIMITATIONS: the DEVELOPER retains title to and ownership of the
+      SOFTWARE and the patents, copyrights, trade secrets and other
+      proprietary interests therein.  You may not make alterations or
+      modifications to the SOFTWARE.  The SOFTWARE may not be sublicensed,
+      rented or leased.  Both the license and your right to use the SOFTWARE
+      terminate automatically if you violate any part of this agreement.
+    </para>
+
+    <para>
+      TERMINATION: This license is effective until terminated.  You may
+      terminate this license at any time by destroying the SOFTWARE and
+      related documentation.  The DEVELOPER may terminate this license
+      agreement if you fail to comply with the terms of this license
+      agreement.  Upon termination you must destroy the SOFTWARE and related
+      documentation.
+    </para>
+
+    <para>
+      DISCLAIMER OF WARRANTY: THE SOFTWARE AND RELATED DOCUMENTATION ARE
+      PROVIDED "AS IS" AND WITHOUT WARRANTY OF ANY KIND.  TO THE MAXIMUM
+      EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER DISCLAIMS ALL
+      WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+      PURPOSE AND ANY WARRANTY AGAINST INFRINGEMENT, WITH REGARD TO THE
+      SOFTWARE.  THE DEVELOPER DOES NOT WARRANT THAT THE FUNCTIONS CONTAINED
+      IN THE SOFTWARE WILL MEET THE REQUIREMENTS, OR THAT THE OPERATION OF
+      THE SOFTWARE WILL BE ERROR-FREE, OR THAT DEFECTS WILL BE CORRECTED.
+      SOME STATES DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THE
+      ABOVE EXCLUSION MAY NOT APPLY TO YOU.
+    </para>
+
+    <para>
+      LIMITATION OF LIABILITY: The entire liability of the DEVELOPER shall
+      be limited to the amount paid by the customer for the SOFTWARE.  To
+      the maximum extent permitted by applicable law, the DEVELOPER and its
+      licensors, distributors, dealers, or suppliers are not liable for any
+      indirect, special, incidental, or consequential damages (including
+      damages for loss of business, loss of profits or investment, or the
+      like).  Some states countries do not allow the limitation and/or
+      exclusion of liability for incidental or consequential damages, so the
+      above limitation or exclusion may not apply to you.
+    </para>
+
+    <para>
+      ENTIRE AGREEMENT: This Agreement contains the entire agreement and
+      there are no other promises or conditions in any other agreement
+      whether oral or written.
+    </para>
+
+    <para>
+      <address>
+	<personname>
+	  <firstname>Karoly</firstname> <surname>Lorentey</surname>
+	</personname>
+	<email>lorentey@fnord.hu</email>
+	<street>Teleki Laszlo ter 3. 3/I/6.</street>
+	<postcode>1083</postcode> <city>Budapest</city>
+	<country>HUNGARY</country>
+      </address>
+    </para>
+  </section>
+
+  <section>
+    <title>Legal Notices</title>
+
+    <para><productname>Palm OS</productname> is a registered trademark
+      of Palm Trademark Holding Company, LLC.</para>
+    
+    <para><productname>Palm</productname>, <productname>Treo</productname>, 
+      <productname>Tungsten</productname>, 
+      <productname>LifeDrive</productname>
+      and <productname>Zire</productname> are trademarks or registered
+      trademarks of Palm, Inc.</para>
+    
+    <para><productname>Graffiti</productname> is a registered
+    trademark of PalmSource, Inc.</para>
+    
+    <para><productname>Bluetooth</productname> is a trademark of
+    Bluetooth SIG, Inc., U.S.A.</para>
+    
+    <para><productname>Microsoft</productname>
+      and <productname>Windows</productname> are registered trademarks
+      of Microsoft Corporation.</para>
+    
+    <para><productname>Apple</productname> is a trademark of Apple
+    Computer, Inc.</para>
+
+    <para><productname>Linux</productname> is a trademark of Linus
+    Torvalds.</para>
+    
+    <para><productname>WIDCOMM</productname> is a trademark of
+    WIDCOMMinc.</para>
+      
+    <para><productname>BlueSoleil</productname> is a trademark of IVT
+    Corporation.</para>
+    
+    <para>All other brands, trademarks and logos appearing in this
+      document are the trademarks and logos of their respective
+      owners.</para>
+  </section>
+
+</article>
