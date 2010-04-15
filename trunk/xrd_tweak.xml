@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<!-- <xsl:strip-space elements="PALMOS_RESOURCE_FILE FORM_OBJECTS"/> -->
+<xsl:param name="newline" select="'&#x0A;'"/>
+
+<xsl:template match="PALMOS_RESOURCE_FILE">
+  <PALMOS_RESOURCE_FILE>
+	<xsl:apply-templates/>
+  </PALMOS_RESOURCE_FILE>
+</xsl:template>
+
+<!-- Delete superfluous forms.  -->
+<xsl:template match="FORM_RESOURCE[contains(@COMMENT, ' Keyboard')]"/>
+
+<!-- Collect their contents on the Keyboard form.  -->
+<xsl:template match="FORM_RESOURCE[@COMMENT='Keyboard']/FORM_OBJECTS">
+   <xsl:copy>
+	<xsl:apply-templates select="@*|node()"/>
+	<xsl:apply-templates select="../../FORM_RESOURCE[contains(@COMMENT, ' Keyboard')]/FORM_OBJECTS/*[name() != 'FORM_TITLE']"/>
+	<xsl:value-of select="$newline"/>
+   </xsl:copy>
+</xsl:template>
+
+<!-- Adjust ID number of relocated objects.  -->
+<xsl:template match="FORM_RESOURCE[contains(@COMMENT, ' Keyboard')]/FORM_OBJECTS/*/ID">
+	<ID>
+		<xsl:value-of select="number(text()) + ancestor::FORM_RESOURCE/@RESOURCE_ID - 1000"/>
+	</ID>
+</xsl:template>
+
+<!-- Set usable flag to false of relocated objects.  -->
+<xsl:template match="FORM_RESOURCE[contains(@COMMENT, ' Keyboard')]/FORM_OBJECTS/*/USABLE">
+	<USABLE> FALSE </USABLE>
+</xsl:template>
+
+
+<!-- Copying data -->
+
+<xsl:template match="*">
+	<xsl:element name="{local-name(.)}">
+		<xsl:apply-templates select="@*|node()"/>
+	</xsl:element>
+</xsl:template>
+
+<xsl:template match="@*">
+	<xsl:copy>
+        <xsl:apply-templates select="@*|node()"/>
+	</xsl:copy>
+</xsl:template>
+
+<xsl:template match="text()">
+	<xsl:copy>
+		<xsl:apply-templates select="@*|node()"/>
+    </xsl:copy>
+</xsl:template>
+
+</xsl:stylesheet>
+   

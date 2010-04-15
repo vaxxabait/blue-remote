@@ -1,0 +1,4 @@
+#!/bin/sh
+
+javac -classpath . hu/fnord/palm/drm/RegistrationCode.java
+java -classpath . hu.fnord.palm.drm.RegistrationCode "$@"
