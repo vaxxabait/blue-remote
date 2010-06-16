@@ -1,5 +1,7 @@
 # Custom Makefile snippets.
 
+PALMSDK = "C:\Program Files\PalmSource\Palm OS Developer Suite\PalmSDK\Incs"
+
 # function for converting resources into resource header files
 define RESOURCE_LIST_TO_HEADERS
 	$(addprefix src/, $(addsuffix _res.h, $(foreach file, $(RESOURCES), $(basename $(notdir $(file))))))
@@ -25,7 +27,7 @@ $(OBJ_DIR)/Version.o: src/auto/Version.c
 	$(CC) -c $< $(INCLUDES) $(CFLAGS) -o $@
 
 src/auto/Magic.g: src/auto $(wildcard src/*.h)
-	cpp -D DEFUN_DEFINES -o - src/CoreHeaders.h \
+	cpp -D DEFUN_DEFINES src/CoreHeaders.h \
 	| grep "^@define" \
 	| sed -e 's/@/#/g' -e 's/%/_/g' -e 's/;//g' > $@
 
@@ -34,12 +36,12 @@ src/auto/Magic.i: src/auto $(wildcard src/*.h)
 
 release:
 	$(MAKE) DEBUG_OR_RELEASE=Release clean all
-	-rm -f BlueRemote1.0p.zip
-	zip -j BlueRemote1.0p.zip Release/BlueRemote.prc
+	-rm -f BlueRemote-1.0p.zip
+	zip -j BlueRemote-1.0p.zip Release/BlueRemote.prc
 
 build-number:
 	if [ ! -r .build-number ]; then echo 0 > .build-number; fi
-	b=$$(echo $$(cat .build-number) 1+p | dc); echo $$b > .build-number
+	bash -c 'b=$$(echo $$(($$(cat .build-number) + 1)) ); echo $$b > .build-number'
 
 src/auto:
 	mkdir src/auto
