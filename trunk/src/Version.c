@@ -2,7 +2,7 @@
  *
  * Copyright (c) 2006, 2010 Karoly Lorentey
  *
- * File: DRM.h
+ * File: Version.c
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,36 +20,37 @@
  *
  ***********************************************************************/
 
-#undef SECTION
-#define SECTION DRM_SECTION
+#include "Common.h"
 
-#ifdef NORMAL_INCLUDE
+#define PRIVATE_INCLUDE
+#include "Defun.h"
+#include "Version.h"
+#undef PRIVATE_INCLUDE
 
-typedef struct DRMPreferences {
-    /* Version number, set to prefDRMVersionNum.  */
-    Int16 version;
+/***********************************************************************
+ *
+ *  CONSTANTS
+ *
+ ***********************************************************************/
 
-    /* The time of the first installation.  */
-    UInt32 installtime;
+#define VERSION_BASE	"2.0"
+#define VERSION_TYPE	"dev"
 
-    /* The number of times the application has been started.  */
-    UInt32 startups;
-    
-    /* The last time we nagged the user.  */
-    UInt32 nagtime;
-
-    /* The registration code, as entered by the user.  */
-    char regcode[9];
-
-    /* SHA1 digest of the above (plus some seasoning).  */
-    UInt8 checksum[20];
-} DRMPreferences;
-
+#ifdef DEBUG_BUILD
+#define VERSION VERSION_BASE VERSION_TYPE
+#else
+#define VERSION VERSION_BASE
 #endif
 
+/***********************************************************************
+ *
+ *  EXPORTED FUNCTION DEFINITIONS
+ *
+ ***********************************************************************/
 
-DEFUN0 (void, DRMInit);
-DEFUN0 (void, DRMClose);
-DEFUN0 (Boolean, DRMAppStart);
-DEFUN0 (Boolean, DRMIsRegistered);
-DEFUN0 (void, DRMRegisterForm);
+char *
+f_VersionString (Globals *g) 
+{
+    /* Simple, eh?  */
+    return VERSION;
+}

@@ -46,6 +46,7 @@ LIB_NAME = $(ESCAPED_ARTIFACT_NAME).a
 SOURCES := \
 	src/Main.c \
 	\
+	src/Version.c \
 	src/Tools.c \
 	src/MsgQueue.c \
 	src/Log.c \
@@ -60,8 +61,6 @@ SOURCES := \
 	src/ProgressForm.c \
 	src/Heap.c \
 	src/Timer.c \
-	src/SHA1.c \
-	src/DRM.c \
 	src/AutoOff.c \
 	src/UITools.c \
 	src/HardKeys.c \

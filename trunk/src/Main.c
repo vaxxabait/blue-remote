@@ -387,14 +387,7 @@ AppInit (Globals *g)
     f_PrefInit (g);
     f_CmdInit (g);
     f_TimerInit (g);
-    f_DRMInit (g);
 
-    if (!DRMAppStart()) {
-	ProgressStop (false);
-	err = appErrTrialExpired;
-	goto error;
-    }
-    
     f_DevListInit (g);
     f_ProgressInit (g);
     f_HIDPInit (g);
@@ -419,7 +412,6 @@ error:
     HIDPClose();
     ProgressClose();
     DevListClose();
-    DRMClose();
     TimerClose();
     CmdClose();
     PrefClose();
@@ -468,7 +460,6 @@ AppClose (Globals *g)
     BTClose();
     AutoOffClose();
     HardKeyClose();
-    DRMClose();
     HIDPClose();
     ProgressClose();
     DevListClose();

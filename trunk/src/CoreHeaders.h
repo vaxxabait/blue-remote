@@ -39,6 +39,4 @@
 #include "Pref.h"
 #include "ProgressForm.h"
 #include "UITools.h"
-#include "SHA1.h"
-#include "DRM.h"
 #include "AutoOff.h"

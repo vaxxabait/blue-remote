@@ -54,10 +54,6 @@ AppMenuDoCommand (UInt16 command)
 	    PrefShowSetupForm();
 	    return true;
 	    
-	case CommonOptionsRegister:
-	    DRMRegisterForm();
-	    return true;
-
 	case CommonOptionsAbout:
 	    AboutShow();
 	    return true;
