@@ -116,8 +116,8 @@ DATABASE_NAME =$(ESCAPED_DATABASE_NAME)
 #
 # Set Debug or Release configuration here
 #
-DEBUG_OR_RELEASE=Debug
-#DEBUG_OR_RELEASE=Release
+#DEBUG_OR_RELEASE=Debug
+DEBUG_OR_RELEASE=Release
 
 #
 # Set the target platform for the build; either Device or Simulator
