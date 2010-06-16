@@ -247,13 +247,13 @@ endef
 # function for converting resources into resource object files
 define RESOURCE_LIST_TO_OBJS
 	$(addprefix $(OBJ_DIR)/, $(addsuffix .trc, $(foreach file, $(RESOURCES), \
-	$(basename $(notdir $(file))))))
+	$(basename $(file)))))
 endef
 
 # function for converting resources into resource dependency files
 define RESOURCE_LIST_TO_DEPS
 	$(addprefix $(OBJ_DIR)/, $(addsuffix .d, $(foreach file, $(RESOURCES), \
-	$(basename $(notdir $(file))))))
+	$(basename $(file)))))
 endef
 
 SEGMENT_BASE = multiple_code_sections
@@ -364,68 +364,83 @@ $(OBJ_DIR)/%.o : %.c
 	$(CC) -c $< $(INCLUDES) $(CFLAGS) -o $@
 	echo -n $(@:%.o=%.d) $(dir $@) > $(@:%.o=%.d) && \
 	$(CC) -c $< $(DEPFLAGS) $(INCLUDES) $(CFLAGS) >> $(@:%.o=%.d) && \
-	echo -e \\n$(@:%.o=%.d) $@ : Makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
-
+	echo -e \\n$(@:%.o=%.d) $@ : makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
+	
 $(OBJ_DIR)/%.o : %.cpp
 	@echo
 	$(CC) -c $< $(INCLUDES) $(CPP_INCLUDES) $(CFLAGS) -o $@
 	echo -n $(@:%.o=%.d) $(dir $@) > $(@:%.o=%.d) && \
 	$(CC) -c $< $(DEPFLAGS) $(INCLUDES) $(CPP_INCLUDES) $(CFLAGS) >> $(@:%.o=%.d) && \
-	echo -e \\n$(@:%.o=%.d) $@ : Makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
-
+	echo -e \\n$(@:%.o=%.d) $@ : makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
+	
 $(OBJ_DIR)/%.o : %.cp
 	@echo
 	$(CC) -c $< $(INCLUDES) $(CPP_INCLUDES) $(CFLAGS) -o $@
 	echo -n $(@:%.o=%.d) $(dir $@) > $(@:%.o=%.d) && \
 	$(CC) -c $< $(DEPFLAGS) $(INCLUDES) $(CPP_INCLUDES) $(CFLAGS) >> $(@:%.o=%.d) && \
-	echo -e \\n$(@:%.o=%.d) $@ : Makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
-
+	echo -e \\n$(@:%.o=%.d) $@ : makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
+	
 $(OBJ_DIR)/%.o : %.cc
 	@echo
 	$(CC) -c $< $(INCLUDES) $(CPP_INCLUDES) $(CFLAGS) -o $@
 	echo -n $(@:%.o=%.d) $(dir $@) > $(@:%.o=%.d) && \
 	$(CC) -c $< $(DEPFLAGS) $(INCLUDES) $(CPP_INCLUDES) $(CFLAGS) >> $(@:%.o=%.d) && \
-	echo -e \\n$(@:%.o=%.d) $@ : Makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
-
+	echo -e \\n$(@:%.o=%.d) $@ : makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
+	
 $(OBJ_DIR)/%.o : %.C
 	@echo
 	$(CC) -c $< $(INCLUDES) $(CFLAGS) -o $@
 	echo -n $(@:%.o=%.d) $(dir $@) > $(@:%.o=%.d) && \
 	$(CC) -c $< $(DEPFLAGS) $(INCLUDES) $(CFLAGS) >> $(@:%.o=%.d) && \
-	echo -e \\n$(@:%.o=%.d) $@ : Makefile makefile-engine.mk >> $(@:%.o=%.d)
-
+	echo -e \\n$(@:%.o=%.d) $@ : makefile makefile-engine.mk >> $(@:%.o=%.d)
+	
 $(OBJ_DIR)/%.o : %.CC
 	@echo
 	$(CC) -c $< $(INCLUDES) $(CPP_INCLUDES) $(CFLAGS) -o $@
 	echo -n $(@:%.o=%.d) $(dir $@) > $(@:%.o=%.d) && \
 	$(CC) -c $< $(DEPFLAGS) $(INCLUDES) $(CPP_INCLUDES) $(CFLAGS) >> $(@:%.o=%.d) && \
-	echo -e \\n$(@:%.o=%.d) $@ : Makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
-
+	echo -e \\n$(@:%.o=%.d) $@ : makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
+	
 $(OBJ_DIR)/%.o : %.CPP
 	@echo
 	$(CC) -c $< $(INCLUDES) $(CPP_INCLUDES) $(CFLAGS) -o $@
 	echo -n $(@:%.o=%.d) $(dir $@) > $(@:%.o=%.d) && \
 	$(CC) -c $< $(DEPFLAGS) $(INCLUDES) $(CPP_INCLUDES) $(CFLAGS) >> $(@:%.o=%.d) && \
-	echo -e \\n$(@:%.o=%.d) $@ : Makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
-
+	echo -e \\n$(@:%.o=%.d) $@ : makefile makefile-engine.mk auto-generated.mk >> $(@:%.o=%.d)
+	
 
 # XRD sources
-$(OBJ_DIR)/%.trc : rsc/%.xrd
+$(OBJ_DIR)/%.trc : %.xrd
 	@echo
 	"$(TOOLS_DIR)PalmRC" -p $(TARGET_FORMAT) $(RFLAGS) -locale $(LOCALE) $< -o $@
+	echo -n $(@:%.trc=%.d) $@ : ' ' > $(@:%.trc=%.d) && \
+	"$(TOOLS_DIR)PalmRC" -quiet -p $(TARGET_FORMAT) -makedeps $(@:%.trc=%.d).tmp $(RFLAGS) -locale $(LOCALE) $< && \
+	/usr/bin/cygpath -m -f $(@:%.trc=%.d).tmp | /usr/bin/sed 's/ /\\\ /g' | /usr/bin/tr '\r\n' ' ' >> $(@:%.trc=%.d) && \
+	rm -rf $(@:%.trc=%.d).tmp && \
+	echo -e \\n\\n$(@:%.trc=%.d) $@ : makefile makefile-engine.mk auto-generated.mk >> $(@:%.trc=%.d)
+	
+$(OBJ_DIR)/%.trc : %.XRD
+	@echo
+	"$(TOOLS_DIR)PalmRC" -p $(TARGET_FORMAT) $(RFLAGS) -locale $(LOCALE) $< -o $@
+	echo -n $(@:%.trc=%.d) $@ : ' ' > $(@:%.trc=%.d) && \
+	"$(TOOLS_DIR)PalmRC" -quiet -p $(TARGET_FORMAT) -makedeps $(@:%.trc=%.d).tmp $(RFLAGS) -locale $(LOCALE) $< && \
+	/usr/bin/cygpath -m -f $(@:%.trc=%.d).tmp | /usr/bin/sed 's/ /\\\ /g' | /usr/bin/tr '\r\n' ' ' >> $(@:%.trc=%.d) && \
+	rm -rf $(@:%.trc=%.d).tmp && \
+	echo -e \\n\\n$(@:%.trc=%.d) $@ : makefile makefile-engine.mk auto-generated.mk >> $(@:%.trc=%.d)
+
 
 # multi-section rules
 $(SEGMENT_BASE).o : $(SEGMENT_BASE).s
 
-$(SEGMENT_BASE).s $(SEGMENT_BASE).ld : Sections.def Makefile makefile-engine.mk
+$(SEGMENT_BASE).s $(SEGMENT_BASE).ld : Sections.def makefile makefile-engine.mk
 	@echo
 	$(MS) -b $(SEGMENT_BASE) Sections.def
 
 # shared library rules
-$(SLIB_DEF_ASSEMBLY) : $(SLIB_DEF_FILE) Makefile makefile-engine.mk
+$(SLIB_DEF_ASSEMBLY) : $(SLIB_DEF_FILE) makefile makefile-engine.mk
 	@echo
 	$(SG) $<
-
+	
 $(SLIB_DEF_OBJ) : $(SLIB_DEF_ASSEMBLY)
 	@echo
 	$(AS) -o $@ $<

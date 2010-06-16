@@ -23,10 +23,10 @@ SHELL = /bin/sh
 # are based on the artifact name
 ## --------------------------------------------------------------------------
 
-ARTIFACT_NAME = BlueRemote
+ARTIFACT_NAME =BlueRemote
 
 EMPTY =
-SPACE = $(EMPTY) $(EMPTY)
+SPACE =$(EMPTY) $(EMPTY)
 ESCAPED_ARTIFACT_NAME = $(subst $(SPACE),\ ,$(ARTIFACT_NAME))
 PRC_NAME = $(ESCAPED_ARTIFACT_NAME).prc
 LIB_NAME = $(ESCAPED_ARTIFACT_NAME).a
@@ -38,7 +38,7 @@ LIB_NAME = $(ESCAPED_ARTIFACT_NAME).a
 # Please do not use spaces in directory names.
 # A note about XRD resource files:  If you have existing .rsrc or .rcp files, 
 # refer to the documentation for the GenerateXRD tool to convert them into 
-# XRD files for use with all Palm OS SDK.
+# XRD files for use with all Palm OS SDKs.
 ## --------------------------------------------------------------------------
 
 # TODO: Update all sources and resources
@@ -117,8 +117,8 @@ DATABASE_NAME =$(ESCAPED_DATABASE_NAME)
 #
 # Set Debug or Release configuration here
 #
-#DEBUG_OR_RELEASE=Debug
-DEBUG_OR_RELEASE=Release
+DEBUG_OR_RELEASE=Debug
+#DEBUG_OR_RELEASE=Release
 
 #
 # Set the target platform for the build; either Device or Simulator
@@ -161,7 +161,6 @@ LOCAL_INCLUDE_PATHS = -I src -I src/auto
 # Additionally, you must explicly specify the "-I" prior to each
 # path included in this variable.  Spaces are used to separate
 # each path from each other.
-PALMSDK = ~/work/palm/PalmSDK/Incs
 SYSTEM_INCLUDE_PATHS = 	-I $(PALMSDK) \
 			-I $(PALMSDK)/68K/System \
 			-I $(PALMSDK)/Common/System \
@@ -251,7 +250,6 @@ RELEASE_DEVICE_OUTPUT_DIR := Release
 DEBUG_SIMULATOR_OUTPUT_DIR := Debug
 RELEASE_SIMULATOR_OUTPUT_DIR := Release
 
-all:
 
 ## --------------------------------------------------------------------------
 # Makefiles
