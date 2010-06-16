@@ -38,7 +38,6 @@ extern void *__text__sec4;
 #define SECTION1 __attribute__ ((section("sec1")))
 #define SECTION2 __attribute__ ((section("sec2")))
 #define SECTION3 __attribute__ ((section("sec3")))
-#define SECTION4 __attribute__ ((section("sec4")))
 
 
 #define MAIN_SECTION            SECTION0
@@ -61,17 +60,14 @@ extern void *__text__sec4;
 
 #define BLUETOOTH_SECTION       SECTION2
 
-#define SHA1_SECTION		SECTION3
-#define DRM_SECTION		SECTION3
-
-#define HARDKEYS_SECTION        SECTION4
-#define AUTOOFF_SECTION		SECTION4
-#define UITOOLS_SECTION         SECTION4
-#define DATABASE_SECTION        SECTION4
-#define DEVLIST_SECTION         SECTION4
-#define PROGRESSFORM_SECTION    SECTION4
-#define HEAP_SECTION            SECTION4
-#define TIMER_SECTION           SECTION4
+#define HARDKEYS_SECTION        SECTION3
+#define AUTOOFF_SECTION		SECTION3
+#define UITOOLS_SECTION         SECTION3
+#define DATABASE_SECTION        SECTION3
+#define DEVLIST_SECTION         SECTION3
+#define PROGRESSFORM_SECTION    SECTION3
+#define HEAP_SECTION            SECTION3
+#define TIMER_SECTION           SECTION3
 
 
 #endif

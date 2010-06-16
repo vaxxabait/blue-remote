@@ -34,6 +34,3 @@
 
 /* Remote host terminated connection.  */
 #define appErrConnTerminated	(appErrorClass + 0x0005)
-
-/* The free trial period has expired.  */
-#define appErrTrialExpired	(appErrorClass + 0x0006)

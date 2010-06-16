@@ -19,13 +19,6 @@ src/%_res.h: rsc/%_tweaked.xrd custom.mk xrd2header.xml
 
 $(SOURCE_LIST_TO_OBJS): $(RESOURCE_HEADERS) src/auto/Magic.g src/auto/Magic.i src/auto/Config.h
 
-OBJS += $(OBJ_DIR)/Version.o
-
-$(LINKER_OUTPUT): $(OBJ_DIR)/Version.o
-
-$(OBJ_DIR)/Version.o: src/auto/Version.c
-	$(CC) -c $< $(INCLUDES) $(CFLAGS) -o $@
-
 src/auto/Magic.g: src/auto $(wildcard src/*.h)
 	cpp -D DEFUN_DEFINES src/CoreHeaders.h \
 	| grep "^@define" \
@@ -39,18 +32,11 @@ release:
 	-rm -f BlueRemote-1.0p.zip
 	zip -j BlueRemote-1.0p.zip Release/BlueRemote.prc
 
-build-number:
-	if [ ! -r .build-number ]; then echo 0 > .build-number; fi
-	bash -c 'b=$$(echo $$(($$(cat .build-number) + 1)) ); echo $$b > .build-number'
-
 src/auto:
 	mkdir src/auto
 
 clean::
 	-rm -rf src/auto
-
-src/auto/Version.c: src/auto src/Version.c.in custom.mk build-number
-	b=$$(cat .build-number); cat src/Version.c.in | sed "s/@BUILD@/$$b/g" > $@
 
 # TODO: autoconf support
 src/auto/Config.h: src/auto src/Config.h.in custom.mk
