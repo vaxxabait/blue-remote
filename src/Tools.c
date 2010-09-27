@@ -161,9 +161,10 @@ f_CheckedMemHandleNew (Globals *g, UInt32 size, Boolean system)
     ptr = MemHandleLock (result);
     MemSet (ptr, size, 0);
     MemPtrUnlock (ptr);
+#ifdef DEBUG_BUILD
     MemHeapCheck (MemHandleHeapID (result));
     MemHeapScramble (MemHandleHeapID (result));
-
+#endif
     return result;
 }
 
