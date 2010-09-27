@@ -789,7 +789,9 @@ AppVersionCheck (Boolean alert)
 
     /* Check for PalmOS 5.x.  */
     FtrGet (sysFtrCreator, sysFtrNumROMVersion, &version);
-    if (version < sysMakeROMVersion(5, 0, 0, sysROMStageRelease, 0)) {
+    
+    /* The Tungsten T (m550) shipped with development bits. */
+    if (version < sysMakeROMVersion(5, 0, 0, sysROMStageDevelopment, 0)) {
         if (alert) FrmAlert (WrongROMVersionAlert);
         return sysErrRomIncompatible;
     }
