@@ -23,7 +23,7 @@ SHELL = /bin/sh
 # are based on the artifact name
 ## --------------------------------------------------------------------------
 
-ARTIFACT_NAME =BlueRemote
+ARTIFACT_NAME = BlueRemote
 
 EMPTY =
 SPACE =$(EMPTY) $(EMPTY)
@@ -116,8 +116,8 @@ DATABASE_NAME =$(ESCAPED_DATABASE_NAME)
 #
 # Set Debug or Release configuration here
 #
-#DEBUG_OR_RELEASE=Debug
-DEBUG_OR_RELEASE=Release
+DEBUG_OR_RELEASE=Debug
+#DEBUG_OR_RELEASE=Release
 
 #
 # Set the target platform for the build; either Device or Simulator
@@ -129,7 +129,11 @@ TARGET_PLATFORM=Device
 
 # Specify the level of optimization that you want
 # NONE, SOME, FULL
+ifeq ($(DEBUG_OR_RELEASE),Debug)
+OPTIMIZE_LEVEL = NONE
+else
 OPTIMIZE_LEVEL = SOME
+endif
 
 # Specify warning level
 # NONE = supress all warnings
@@ -173,8 +177,14 @@ PRE_INCLUDE_PATHS = -I $(OBJ_DIR)
 # Specify any needed preprocessor symbols.
 # If you set DEFINES to "ASSERTLEVEL=1", the compiler will see "-DASSERTLEVEL=1"
 # (separate individual entries with spaces)
-DEFINES = 
+ifeq ($(DEBUG_OR_RELEASE),Debug)
+DEFINES = DEBUG_BUILD=1
 UNDEFINES = 
+else
+DEFINES = 
+UNDEFINES = DEBUG_BUILD
+endif
+
 
 # Specify additional compiler flags for all files
 ADDITIONAL_COMPILER_FLAGS = -Winline

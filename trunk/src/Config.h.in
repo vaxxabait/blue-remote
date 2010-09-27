@@ -27,7 +27,7 @@
  ***********************************************************************/
 
 /* If not defined, a release version will be built. */
-#undef DEBUG_BUILD
+//#undef DEBUG_BUILD  // Defined in ../Makefile
 
 /* If defined, Bluetooth.c will be replaced by a dummy version.  */
 #undef DISABLE_BLUETOOTH
@@ -36,7 +36,7 @@
 #undef ENABLE_BACKGROUND_MODE
 
 /* Displayed on the About form.  */
-#define APP_COPYRIGHT	"Copyright \251 2006 Karoly Lorentey"
+#define APP_COPYRIGHT	"Copyright \251 2006-2010 Karoly Lorentey"
 
 /* Displayed on the About form and registration forms.  */
 #define APP_SUPPORT	"support@fnord.hu"
@@ -56,7 +56,7 @@
 #define DEFAULT_LOGLEVEL	LogDebug
 #undef FORCE_LOGLEVEL
 #define ENABLE_LOGFILE
-#undef ENABLE_LOGDISPLAY
+#define ENABLE_LOGDISPLAY
 
 
 #else  /* !DEBUG_BUILD */

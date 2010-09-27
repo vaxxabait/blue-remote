@@ -34,7 +34,7 @@
  ***********************************************************************/
 
 #define VERSION_BASE	"2.0"
-#define VERSION_TYPE	"dev"
+#define VERSION_TYPE	"a2"
 
 #ifdef DEBUG_BUILD
 #define VERSION VERSION_BASE VERSION_TYPE
