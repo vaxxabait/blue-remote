@@ -319,7 +319,7 @@ f_LogInit (Globals *g)
     g_canary = 42;
 
 #ifdef ENABLE_LOGDISPLAY
-    g_queue = MsgNewQueue (LOGQUEUE_SIZE, "LogQueue",
+    g_queue = MsgNewQueue ("LogQueue", LOGQUEUE_SIZE,
 			   false, true, QueueCallback);
     g_needsRedraw = false;
 #endif
