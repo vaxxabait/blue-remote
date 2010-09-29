@@ -1942,14 +1942,21 @@ f_BTRadioInit (Globals *g)
 	return err;
     }
     
-    err = WaitForResult (g, AsyncAccessibleMode, true, 0);
-    if (err == appErrProgressCanceled) {
-	return err;
-    }
-    if (err) {
-	ERROR ("Could not initialize Bluetooth radio: %s",
-	       StrError (err));
-	return err;
+    err = WaitForResult (g, AsyncAccessibleMode, true, 100);
+    switch (err) {
+	case 0:
+	    /* No problem. */
+	    break;
+	case appErrProgressCanceled:
+	    return err;
+	case appErrTimeout:
+	    /* Palm Centro/700p does not send this event automatically. */
+	    INFO ("Timed out waiting for accessible mode indication");
+	    break;
+	default:
+	    ERROR ("Could not initialize Bluetooth radio: %s",
+		   StrError (err));
+	    return err;
     }
     
     if (g_origClass == 0) {
