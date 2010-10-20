@@ -838,7 +838,7 @@ f_SwitchToForm (Globals *g, UInt16 formID)
     g_switchingSince = TimGetTicks();
     g_switched = false;
     // TODO find out why does this cause flickering.
-    //FrmGotoForm (formID);
+    FrmGotoForm (formID);     // The Sony Clie PEG-TG50/U needs this enabled (issue 4).
 }
 
 void
