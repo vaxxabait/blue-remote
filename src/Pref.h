@@ -49,10 +49,10 @@ typedef struct SavedPreferences {
 #define SPREF_DEFAULT_DISABLE_AUTO_OFF true
 
     Boolean s_masquarade;
-#define SPREF_DEFAULT_MASQUARADE false
+#define SPREF_DEFAULT_MASQUARADE true
     
     BTDeviceClassType s_deviceSubclass;
-#define SPREF_DEFAULT_DEVICE_SUBCLASS classCombo
+#define SPREF_DEFAULT_DEVICE_SUBCLASS classKeyboard
 
     /* The index of the currently selected device in the DevList.  */
     UInt16 s_device;
