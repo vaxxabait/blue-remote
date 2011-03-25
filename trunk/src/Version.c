@@ -34,13 +34,9 @@
  ***********************************************************************/
 
 #define VERSION_BASE	"2.0"
-#define VERSION_TYPE	"a4"
+#define VERSION_TYPE	"f"
 
-#ifdef DEBUG_BUILD
 #define VERSION VERSION_BASE VERSION_TYPE
-#else
-#define VERSION VERSION_BASE
-#endif
 
 /***********************************************************************
  *
