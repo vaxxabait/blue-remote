@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="25"
+   height="13.75"
+   viewBox="23 -1 25 -0.25"
+   id="svg2017"
+   sodipodi:version="0.32"
+   inkscape:version="0.44"
+   sodipodi:docname="treo-650-kbd.svg"
+   sodipodi:docbase="/home/lorentey"
+   version="1.0"
+   inkscape:export-filename="/home/lorentey/Diagram1.png"
+   inkscape:export-xdpi="2304"
+   inkscape:export-ydpi="2304">
+  <metadata
+     id="metadata2124">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2122">
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Send"
+       style="overflow:visible">
+      <path
+         id="path6007"
+         d="M 0,0 L 5,-5 L -12.5,0 L 5,5 L 0,0 z "
+         style="fill-rule:evenodd;stroke:black;stroke-width:1pt;marker-start:none"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-height="1114"
+     inkscape:window-width="1902"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="1"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="white"
+     id="base"
+     width="20pt"
+     height="11pt"
+     inkscape:zoom="17.98"
+     inkscape:cx="25"
+     inkscape:cy="5.5967742"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:current-layer="svg2017"
+     units="pt" />
+  <image
+     y="3.01774"
+     x="7.7001147"
+     id="image7953"
+     height="7.4757786"
+     width="9.8492241"
+     sodipodi:absref="treo-650.kbd.clear.png"
+     xlink:href="treo-650.kbd.clear.png"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33" />
+  <text
+     style="font-size:0.94074076px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:black;font-family:Myriad Pro"
+     x="16.998608"
+     y="12.716394"
+     id="text2039"
+     sodipodi:linespacing="125%"
+     inkscape:transform-center-x="-33.166407"
+     inkscape:transform-center-y="7.6537863"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33">Shift</text>
+  <text
+     style="font-size:0.94074076px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:black;font-family:Myriad Pro"
+     x="14.425101"
+     y="12.716394"
+     id="text2047"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33">Alt</text>
+  <text
+     style="font-size:0.94074076px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:black;font-family:Myriad Pro"
+     x="7.8012481"
+     y="12.716394"
+     id="text2051"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33">Shift</text>
+  <text
+     style="font-size:0.94074076px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:black;font-family:Myriad Pro"
+     x="19.629337"
+     y="9.874361"
+     id="text2083"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33">Win</text>
+  <text
+     style="font-size:0.94074076px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:black;font-family:Myriad Pro"
+     x="19.869045"
+     y="8.4571609"
+     id="text2087"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33">Enter</text>
+  <text
+     style="font-size:0.94074076px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:black;font-family:Myriad Pro"
+     x="20.992989"
+     y="7.2738061"
+     id="text2093"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33">Backspace</text>
+  <text
+     style="font-size:0.94074076px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:black;font-family:Myriad Pro"
+     x="8.9403687"
+     y="2.1973472"
+     id="text2097"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33">Mode</text>
+  <text
+     style="font-size:0.94074076px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:black;font-family:Myriad Pro"
+     x="12.678782"
+     y="2.1973472"
+     id="text2117"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33">Screen</text>
+  <text
+     style="font-size:0.94074076px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:black;font-family:Myriad Pro"
+     x="11.153302"
+     y="12.716394"
+     id="text6039"
+     sodipodi:linespacing="125%"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33">Control</text>
+  <path
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.13439155;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 9.5039176,9.6057642 L 8.2886186,11.648379"
+     id="path6045"
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33" />
+  <path
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.13439155;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 11.117489,9.8034362 L 11.097824,11.792207"
+     id="path6958"
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33" />
+  <path
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.13439155;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 14.489956,9.7872072 L 14.507904,11.684522"
+     id="path6960"
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33" />
+  <path
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.13439155;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 15.751451,9.5735502 L 16.733429,11.702469"
+     id="path6962"
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33" />
+  <path
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.13439155;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 17.056489,7.0001496 L 18.546155,7.0180976"
+     id="path6964"
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33" />
+  <path
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.13439155;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 8.7821366,4.034208 L 8.7917436,2.673301"
+     id="path6968"
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33" />
+  <path
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.13439155;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 16.060678,8.5433675 L 18.55542,9.4552705"
+     id="path6972"
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33" />
+  <path
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.13439155;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 17.056489,8.0081236 L 18.546155,8.0440196"
+     id="path6974"
+     sodipodi:nodetypes="cc"
+     inkscape:export-filename="/home/lorentey/path7911.png"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33" />
+  <path
+     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.13439155;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 10.430176,5.046843 L 12.150613,2.565049"
+     id="path7911"
+     sodipodi:nodetypes="cc"
+     inkscape:export-xdpi="172.33"
+     inkscape:export-ydpi="172.33" />
+</svg>

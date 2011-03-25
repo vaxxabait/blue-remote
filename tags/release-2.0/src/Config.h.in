@@ -1,0 +1,75 @@
+/***********************************************************************
+ *
+ * Copyright (c) 2006, 2010 Karoly Lorentey
+ *
+ * File: Config.h
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ ***********************************************************************/
+
+/***********************************************************************
+ *
+ *  FEATURES
+ *
+ ***********************************************************************/
+
+/* If not defined, a release version will be built. */
+//#undef DEBUG_BUILD  // Defined in ../Makefile
+
+/* If defined, Bluetooth.c will be replaced by a dummy version.  */
+#undef DISABLE_BLUETOOTH
+
+/* Don't enable this.  */
+#undef ENABLE_BACKGROUND_MODE
+
+/* Displayed on the About form.  */
+#define APP_COPYRIGHT	"Copyright \251 2006-2010 Karoly Lorentey"
+
+/* Displayed on the About form and registration forms.  */
+#define APP_SUPPORT	"support@fnord.hu"
+
+/* Displayed on the About form and registration forms.  */
+#define APP_URL		"http://code.google.com/p/blue-remote/"
+
+
+#ifdef DEBUG_BUILD
+/***********************************************************************
+ *
+ *  DEBUG BUILD FEATURES
+ *
+ ***********************************************************************/
+
+#define ERROR_CHECK_LEVEL	ERROR_CHECK_FULL
+#define DEFAULT_LOGLEVEL	LogDebug
+#undef FORCE_LOGLEVEL
+#define ENABLE_LOGFILE
+#define ENABLE_LOGDISPLAY
+
+
+#else  /* !DEBUG_BUILD */
+/***********************************************************************
+ *
+ *  RELEASE BUILD FEATURES
+ *
+ ***********************************************************************/
+
+#define ERROR_CHECK_LEVEL	ERROR_CHECK_PARTIAL
+#define DEFAULT_LOGLEVEL	LogInfo
+#define FORCE_LOGLEVEL		LogInfo
+#undef ENABLE_LOGFILE
+#undef ENABLE_LOGDISPLAY
+
+#endif	/* !DEBUG_BUILD */

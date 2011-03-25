@@ -1,0 +1,792 @@
+2006-07-25  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Release version 1.2.
+
+	* src/Version.c.in (VERSION_BASE): Update version.
+
+	* rsc/BlueRemote.xrd: Update version number.
+
+	* doc/BlueRemote.xml: Update version number; add entry to version
+	history.
+
+2006-07-24  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Miscellaneous fixes.
+	
+	* custom.mk (doc): Fix path.
+
+	* DRM/hu/fnord/palm/drm/SHA1.java (SHA1): Remove duplicate
+	getDigest method.
+
+	* DRM/Register: New shell script for easy generation of
+	registration codes.
+
+	* dist/BlueRemote-1.1.zip: New file.
+	* dist/BlueRemote12.zip: New file.
+
+2006-07-24  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Fix 5-way navigation on connect form.
+	
+	* src/ConnectForm.c: Include FrmGlue.h.
+	(ConnectFormHandleEvent): Enable select button handling code on
+	devices not supporting one-handed navigation.
+
+2006-07-24  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Fix resource leak in ProgressForm.c.
+	
+	* src/ProgressForm.c: Add static qualifier to global variables.
+	Remove unused variables.  Fix resource lock leak; disable locking
+	of notebook and phone bitmaps.
+
+2006-07-20  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Release version 1.1.
+	
+	* src/Version.c.in (VERSION_BASE): Update.
+	* rsc/BlueRemote.xrd: Update version number.
+	* doc/BlueRemote.xml: Update version, add entry in history.
+
+2006-07-18  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Fix device freeze after a radio reset, triggered by an application
+	switch.  Improve cancel handling.
+	
+	* src/ProgressForm.h (ProgressEnableCancel): Declare.
+
+	* src/ProgressForm.c (cancelEnable): New global.
+	(ProgressFormHandleEvent): Handle cancelEnable.
+	(f_ProgressEnableCancel): New function.
+
+	* src/Bluetooth.c (WaitForResult, WaitForCommand, WaitForQueue): 
+	Add cancelable argument.
+	(LinkConnect, LinkDisconnect, Authenticate)
+	(Encrypt, Connect, Disconnect, f_BTRadioInit, f_BTRadioClose)
+	(f_BTWait, f_BTHandleEvent, f_BTConnect): Update calls of WaitFor*.
+	(f_BTRadioInit): Don't show ERROR on cancel.
+
+2006-07-16  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Release version 1.0 on PalmGear.
+
+2006-07-15  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Fix critical HID protocol issue with keyboard reports.
+	Add a rewritten and vastly improved user's guide.
+	
+	* src/HIDProtocol.c (SendInputReport): Fix report size to match
+	what was declared in the HID descriptor.
+	(ModifierRelease, f_HIDPKeyboard): Remove click delays.
+	(CLICK_DELAY, DOUBLECLICK_DELAY): Remove constants.
+
+	* src/Config.h.in (DEBUG_BUILD): Undefine for final 1.0 release build.
+
+	* rsc/BlueRemote.xrd: Disable "Encrypt link before connecting"
+	setting on the Details form.  Adjust form size and help string.
+
+	* doc/*: New stuff.
+	* pics/*: Ditto.
+	* attic/*: Old stuff.
+	* marketing/desc.html: Update.
+	* marketing/desc.txt: Update.
+
+2006-07-14  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Really fix crash on BTRadioInit failure during startup.
+	
+	* src/Main.c (ReinitRadio): Don't report errors in BTRadioInit
+	twice.  Improve error message after BTListenInit.
+
+	* src/Bluetooth.c (BTGlobals): New field libOpened.
+	(g_libOpened): New macro.
+	(PublishSDPServiceRecord): Don't call ERROR here; replace with LOG.
+	(f_BTRadioInit): Don't try to free g->bt.  Fix explanation
+	condition to include btLibErrBusy.  Set g_libOpened.  Replace WARN
+	with LOG.
+	(f_BTRadioClose): Check for g_libOpened before closing the library.
+	(f_BTInit): Free g->bt when BTRadioInit fails.
+	(UpdateRemoteName): Replace WARNs with LOGs.
+
+	* src/Commands.c (ExecuteOther): Replace WARNs with LOGs.
+	* src/ConnectForm.c (DrawListEntry): Ditto.
+	* src/HIDProtocol.c (SendInputReport): Ditto.
+	* src/KeyboardForm.c (UpdateModifierState, UpdateLedState): Ditto.
+	* src/MouseForm.c (MousePadHandler): Ditto.
+	* src/MsgQueue.c (f_MsgAddHandle, f_MsgAddPtr): Ditto.
+
+2006-07-13  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Fix HIDP SDP record to use 16-bit uints where Windows expects it.
+	Fix HIDP SDP record to include the HID service class in the
+	profile descriptor list, where Windows expects it.
+	Fix crash when radio initialization fails during startup.
+	Add code for Device Identification SDP record (disabled).
+	Device Details form.  Advanced Preferences form.  UI enhancements.
+	
+	* rsc/BlueRemote.xrd: Add Details form and link to it from the
+	Connect form.  Add Advanced Preferences form and link to it from
+	the Preferences form.  New Confirmation alert.  Add navigation
+	resource for the Connect, Preferences, Advanced Preferences and
+	Details forms.  Set the default button on every form.  Add help
+	for Advanced Preferences and Details.  Add version string.
+
+	* src/SDP.c (f_SDPUInt16): New function.
+	* src/SDP.h (SDPUInt16): Declare.
+
+	* src/Bluetooth.h (enum BTDeviceClassType): Remove classNone.
+	(BTMasquarade): Remove.
+
+	* src/Bluetooth.c (HID_DEVICE_CLASS_BASE)
+	(HID_DEVICE_SUBCLASS_KEYBOARD, HID_DEVICE_SUBCLASS_MOUSE)
+	(HID_DEVICE_SUBCLASS_COMBO, HID_DEVICE_SUBCLASS_MOUSEKEYBOARD): 
+	New constants.
+	(HID_DEVICE_CLASS_KEYBOARD, HID_DEVICE_CLASS_MOUSE)
+	(HID_DEVICE_CLASS_COMBO, HID_DEVICE_CLASS_MOUSEKEYBOARD)
+	(HIDProfileUUID): Remove obsolete constants.
+	(BTManagementCallback, BTSocketCallback): Call
+	EvtWakeup after each ENQUEUE to make sure the UI thread will
+	handle the enqueued commands immediately.
+	(DataCleanup): Move risky MemPtrRecoverHandle after TRACE.
+	(HandleNameResult): Reduce loglevel.
+	(SetupNewAddress): Fix addressStr initialization.  Set version and
+	encryptLink fields of struct Device.
+	(Masquarade): New function, renamed from f_BTMasquarade.  Check
+	for SPREF (masquarade), and do nothing if unset.
+	(Disconnect): Add quick parameter.
+	(PublishSDPServiceRecord): Force 16-bit SDPUInts where necessary.
+	Add the HID service class UUID to the profile descriptor list.
+	Add code for Device Identification record (disabled).  Add
+	supervision timeout, copied from the SDP record of another device.
+	(f_BTRadioInit): Add verbose error message for
+	btLibErrInUseByService.  Update call to f_BTMasquarade.
+	(f_BTRadioClose): Close sockets and reset state variables.
+	(f_BTInit): Check for return value of f_BTRadioInit.
+	(f_BTClose): Don't call BTRadioClose twice.
+	(f_BTMasquarade): Renamed to Masquarade and made static.
+	(f_BTConnect): Call UpdateRemoteName.  Initiate encryption when
+	d->encryptLink is set.  Update d->lastConnected.  Use quick
+	disconnect on errors.
+	(f_BTDisconnect): Update calls to Disconnect.
+
+	* src/ProgressForm.c (f_ProgressVUpdate): Don't draw messages that
+	are also displayed in an alert form.  They are frequently too long
+	to display in one line, and the truncation is ugly.
+
+	* src/Pref.h (prefSavedVersionNum): Set to 1.
+	(prefUnsavedVersionNum): Set to 1.
+	(SavedPreferences, UnsavedPreferences): Finalize field names.  Add
+	default value constants.
+
+	* src/Pref.c (PrefSavedReset, PrefUnsavedReset): Use default value
+	constants.
+	(UpdateAdvancedPreferencesForm)
+	(AdvancedPreferencesFormHandleEvent): New functions.
+	(f_PrefShowSetupForm): Use them to implement the Advanced
+	Preferences form.
+
+	* src/Main.c (Connect, Reconnect): Add verbose error message for
+	btLibMeStatusPageTimeout.
+
+	* src/KeyboardForm.c (SwitchScreen): Call UpdateLedState.
+	(UpdateLedState): Add force parameter.
+	(KeyboardFormHandleEvent): Don't call UpdateModifierState twice.
+
+	* src/HIDProtocol.c (CLICK_DELAY, DOUBLECLICK_DELAY): New constants.
+	(f_HIDPKeyboard): Use them.
+
+	* src/HIDDescriptor.c (f_HIDDescriptor): Disable code for Game
+	Pad, Consumer Control and Bettery Strength reports.
+
+	* src/DevList.h (DEVICE_STRUCT_VERSION): New constant.
+	(Device): Add version and encryptLink fields.
+	(DevListDetails): Declare.
+
+	* src/DevList.c: Include BlueRemote_res.h and HardKeys.h.
+	(DontHandleEvent, DrawDetails): New functions.
+	(f_DevListInit): Check record version.  Improve logging.
+	(f_DevListAdd): Set record version.
+	(f_DevListDetails): New function.
+
+	* src/ConnectForm.c (ConnectFormHandleEvent): Don't override
+	center key; let the navigation system handle it.  Handle
+	ConnectDetailsButton instead of ConnectDeleteButton.
+
+	* src/Common.h (UNUSED): New macro.
+
+2006-07-11  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Implement Preferences form.  Implement disableAutoOff.  Work
+	around crashes on older devices after ACL link errors.  Implement
+	device flags. Move StrError to Tools.c.  Use consistent URLs and
+	email addresses.  Fix autooff behaviour and logging.  Implement a
+	short send timeout on devices that have an old-style Bluetooth
+	library.
+	
+	* src/Main.c (Connect, Wait, Disconnect, Reconnect)
+	(AppEventLoop): Call AutoOffEnable as appropriate.
+
+	* rsc/BlueRemote.xrd: New form: Preferences.  Add help string for
+	it.  Link it to the menu.
+
+	* src/Pref.c (PreferencesFormHandleEvent): New static function.
+	(f_PrefShowSetupForm): New function.
+
+	* src/Pref.h (PrefShowSetupForm): Declare it.
+
+	* src/AppMenu.c (AppMenuDoCommand): Handle CommonOptionsPreferences.
+
+	* src/Bluetooth.c (SEND_TIMEOUT): New constant.
+	(KEYBOARD): Remove obsolete constant.
+	(BTChannel): New member sendTimer.
+	(BTSendTimer): New function.
+	(DataCleanup): Call TimerCancel on the sendTimer.
+	(Disconnect): Shorten log message.
+	(SendNext): Reschedule sendTimer.
+	(f_BTRadioClose): Make reconnects faster by not calling
+	BTDisconnect here.
+	(f_BTInit): Initialize sendTimers.
+	(f_BTClose): Free sendTimers, clean out channel pointers.
+
+	* src/Log.c (AddMsg): Use "L" as the prefix for LOGs.
+
+	* src/Timer.c (f_TimerReschedule): Add logging.
+
+	* src/Tools.h (DeviceFlags): New type.
+	(DeviceFlagSupported, DeviceFlagSmartPhone)
+	(DeviceFlagBluetoothCrashOnLinkError): New constants.
+	(ToolsIsSmartPhone): Remove.
+	(ToolsGetDeviceFlags): Declare.
+
+	* src/Tools.c (f_ToolsGetDeviceFlags): New function.
+	(f_ToolsIsSmartPhone): Remove.
+
+	* src/Main.c (ReinitRadio): New function.
+	(Connect, Wait, Disconnect, Reconnect, AppEventLoop): Fix sounds.
+	(AppEventLoop): Handle CmdRadioError.
+
+	* src/Commands.h (CmdRadioError): New command.
+
+	* src/Bluetooth.h (BTRadioInit, BTRadioClose): Declare.
+
+	* src/Bluetooth.c (SDP_PROVIDER_NAME): Change to BlueRemote.
+	(BTGlobals): Remove Globals pointer.  Update accessor macros not
+	to require a local bt variable.  Update all functions that have one.
+	(BTManagementCallback, BTSocketCallback): Fix loglevels.  Do not
+	ever call ERROR or WARN from a EvtGetEvent callback like these.
+	(Disconnect): Flush queues even if not connected.
+	(f_BTRadioInit, f_BTRadioClose): New functions.
+	(f_BTInit, f_BTClose): Call them.
+	(f_BTHandleEvent): Handle broken Bluetooth stacks.  Improve logging.
+
+	* src/AutoOff.c (f_AutoOffClose, f_AutoOffEnable): Don't let the
+	device go to sleep immediately after autooff is reenabled.
+
+	* rsc/BlueRemote.xrd: Shorten some error messages.
+
+	* src/Timer.c (f_TimerTick): Reduce loglevels.
+
+	* src/Bluetooth.h (BTStrError): Remove.
+
+	* src/Bluetooth.c (f_BTStrError): Remove.
+	(BTManagementCallback, BTSocketCallback, BtLibAddrBtdToA)
+	(UpdateRemoteName, SetupNewAddress, Listen, LinkDisconnect)
+	(Authenticate, Encrypt, Connect, SendNext, AddSDPAttribute)
+	(BtLibSdpServiceRecordCreate, PublishSDPServiceRecord)
+	(f_BTInit, f_BTClose, f_BTMasquarade, f_BTHandleEvent)
+	(f_BTConnect, f_BTSelectDevice): Update calls to BTStrError.
+
+	* src/Tools.c (f_StrError): New function.
+	* src/Tools.h (StrError): Declare.
+
+	* src/Main.c (Connect, Wait, Reconnect): Update calls to BTStrError.
+	* src/AutoOff.c (f_AutoOffInit, SysNotifyUnregister): 
+	Update calls to BTStrError.
+	
+	* src/DRM.c (DRM_PARTNER, APPEMAIL): Remove.
+	(f_DRMAppStart, f_DRMRegisterForm): Replace DRM_PARTNER with
+	APP_URL, APPEMAIL with APP_SUPPORT.
+
+	* custom.mk: Make sure Version.c is included in the build.
+
+	* Makefile (SOURCES): Remove Version.c.
+	(LOCAL_INCLUDE_PATHS): Add src and src/auto.
+	
+2006-07-10  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Final (hopefully) Bluetooth connection tweaks.  Fix a
+	long-standing but probably harmless HID protocol bug.  Support for
+	disabling the auto off timer.  Dynamic about form.  Version string
+	with build number.
+	
+	* src/Bluetooth.c (BTManagementCallback): On ACL disconnect,
+	simply enqueue the corresponding async result.  On successful
+	pairing, send CmdPaired, and remove identification of remote
+	device (not available) from log message.
+	(Connect): Fix dataSocket check.  Don't disconnect if connected,
+	but simply return.  Tweak with logging.
+	(WaitForCommand): New function.
+	(f_BTWait): Send an initial report after connection.
+	(f_BTHandleEvent): Handle AsyncACLDisconnect.
+	(f_BTConnect): Authenticate/encrypt channel after connecting the
+	control channel but before connecting interrupt.  Wait 300ms for a
+	VIRTUAL_CABLE_UNPLUG request, and ignore it if we get one.
+
+	* src/HIDProtocol.c (ProcessOutputReport): Don't send a control
+	handshake after interrupt messages.  (D'oh!)
+	(ProcessControl): Send CmdUnplugReceived after
+	VIRTUAL_CABLE_UNPLUG, not simply CmdInitiateDisconnect.
+	(ProcessSetReport): Send handshake here, don't rely on
+	ProcessOutputReport sending one.
+
+	* src/Commands.h (CmdUnplugReceived, CmdPaired): New commands.
+
+	* src/Main.c: (AppEventLoop): Handle CmdUnplugReceived.
+
+	* src/AutoOff.h: New file.
+	* src/AutoOff.c: New file.
+
+	* src/Main.c (AppInit): Call AutoOffInit and AutoOffClose.
+	(AppClose): Call AutoOffClose.
+
+	* src/Common.h (Globals): New member autooff.
+
+	* src/ProgressForm.c (f_ProgressStart): Draw form before showing
+	the Cancel button to prevent saveunder from restoring a messed up
+	display.  Disable auto off.
+	(f_ProgressStop): Re-enable auto off.
+
+	* src/Pref.h (prefSavedVersionNum, prefUnsavedVersionNum): Increment.
+	(SavedPreferences): New preference disableAutoOff.
+
+	* src/Pref.c (PrefSavedReset): Set disableAutoOff to true.
+
+	* src/HardKeys.c (HardKeyEnable): Add boolean parameter, return
+	previous state.
+	(HardKeyDisable): Remove function.
+
+	* src/HardKeys.h: Update.
+
+	* src/MouseForm.c: Sane variable and parameter names.
+	(MouseFormHandleEvent): Update HardKey calls.
+	* src/ConnectForm.c (ConnectFormHandleEvent): Update HardKey calls.
+	* src/KeyboardForm.c (KeyboardFormHandleEvent): Ditto.
+
+	* src/AboutForm.h: New file.
+	* src/AboutForm.c: New file.
+
+	* src/AppMenu.c: Include AboutForm.h.
+	(FrmInitForm): Call AboutShow.
+
+	* src/Version.h: New file.
+	* src/Version.c.in: New file.
+	* src/Config.h: Rename to Config.h.in.
+
+	* src/CoreHeaders.h: Add Version.h and AutoOff.h.
+
+	* src/Sections.h (VERSION_SECTION, ABOUTFORM_SECTION)
+	(AUTOOFF_SECTION): New constants.
+
+	* rsc/BlueRemote.xrd: Remove most labels from About form.  Set the
+	save behind attribute on the progress form.  Delete bogus shortcut
+	for "Add Device.." menu entry.
+
+	* rsc/AppIcon_Large_X2_8.bmp: Generate a better version with
+	dithered colors.
+
+	* src/Log.c (AddMsg): Convert newlines to spaces before writing
+	message in logfile.
+
+	* src/Log.h (DEFAULT_LOGLEVEL, FORCE_LOGLEVEL): Add some docs.
+
+	* src/Hash.c (HashFindEntry, f_HashCreate, f_HashDelete): 
+	Fix format warnings in trace messages.
+
+	* custom.mk: Convert to UNIX line endings.
+	Add support for generating src/auto/Version.c and src/auto/Config.h.
+
+	* Makefile: Convert to UNIX line endings.
+	(SOURCES): Add src/auto/Version.c and src/AboutForm.c
+	
+2006-07-08  Lőrentey Károly  <lorentey@fnord.hu>
+
+	* src/MouseForm.c (BUTTON_GROUP_ID): New constant.
+	(UpdateButtonAfterClick): Use it.
+	(dragmode): New variable.
+	(MousePadDoClick): Start/stop dragging if in drag mode.
+	(DragMode): New function.
+	(DragStart): Renamed from StartDragging. Enable dragmode if needed.
+	(DragStop): Renamed from StopDragging.  Disable dragmode if needed.
+	(MouseFormHandleEvent): Sane variable names.  Call DragMode
+	instead of StopDragging.  On button selection, only disable
+	dragmode if currently dragging.  Let the drag checkbox control
+	drag mode instead of drag state.
+	(MouseInitForm, MouseFormOverrideEvent): Sane variable names.
+
+	* src/Log.h (MLOG, LOG): New macros.
+
+2006-07-07  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Add some documentation with a pile of screenshots.
+
+	* doc/BlueRemote.tex: New file.
+	* doc/nagyprogram.tex: New file.
+	* doc/pics/*.png: New screenshots.
+	* doc/pics/windows/widcomm/*: New screenshots.
+	* src/Bluetooth.c (SDP_PROVIDER_NAME): Set to my name.
+
+2006-07-06  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Final update before university demonstration.
+	Enhance connection algorithm.  Autoswitch to rewritten Wait screen.
+	Lower GCC optimization level to fix some crashes.
+	Merge the sticky timers into a single timeout.
+	
+	* Makefile (OPTIMIZE_LEVEL): Reduce to SOME.  GCC seems to
+	miscompile code with FULL resulting in mysterious but repeatable
+	crashes.
+
+	* src/ProgressForm.c (ProgressFormHandleEvent): Remove old 
+	debug code.
+	(f_ProgressStart): Discard any queued pen and key events.
+
+	* src/MouseForm.c (UpdateButtonAfterClick, StopDragging): Update
+	group ids.
+
+	* src/Main.c (Wait): Remain on the Wait screen until connected or
+	canceled.
+	(AppEventLoop): Switch to the Wait screen if an incoming
+	connection is received while on the Welcome form.
+
+	* src/KeyboardForm.c (QUICK_HIDE_SCREEN): Remove constant.
+	(ShowScreen, HideScreen): Remove display param.  Return
+	immediately if not on Keyboard screen.  
+	(ShowScreen): Always call FrmShowObject.
+	(HideScreen): Remove support for QUICK_HIDE_SCREEN.  Always call
+	FrmHideObject.
+	(SwitchScreen): Change type of display param to Boolean.  Add some
+	logging.  Simplify.
+	(KbdSwitchScreens): Add some logging.
+	(KeyboardFormHandleEvent): Update form state here instead of 
+	KeyboardInitForm.  Add some logging.
+	(KeyboardInitForm): Defer form state update to
+	KeyboardFormHandleEvent.
+
+	* src/Heap.c (SWAP, DumpHeap_, DumpHeap): Reduce loglevel.
+
+	* src/HIDProtocol.c (HIDPGlobals, g_modtimers): Merge the
+	modtimers array into a single timer, common to all modifiers.
+	(ModifierPress, ModifierRelease, NormalKey): Don't cancel the timer.
+	(StickyTimer): Rewrite.  Time out all stickies at once.
+	(f_HIDPInit, f_HIDPClose, f_HIDPReset): Update for merged timer.
+	(ModString): Add unused attribute to shut up GCC warning.
+
+
+	* src/Error.h (appErrConnTerminated): New constant.
+
+	* src/Commands.h (AsyncKind): Add AsyncNone, useful for
+	implementing delays.
+
+	* src/Bluetooth.c (BTManagementCallback): Shorten authn success
+	message.  Don't rejects incoming connections while connecting.
+	(Connect): Enhance log.
+	(WaitForResult, WaitForQueue): Call SysHandleEvent to get normal
+	hard key behaviour.
+	(f_BTWait): Rewrite for better behaviour.  Wait for a while before
+	switching to the mouse/keyboard screens to allow for pairing to
+	complete.
+	(f_BTConnect): (For Windows) make some authentication failures
+	hard errors.  Remove device from DevList if we failed to
+	authenticate with it.  Don't connect if already connected.
+	Return appErrConnTerminated if WaitForQueue returns
+	appErrNotConnected.
+
+	* rsc/BlueRemote.xrd: Renumber group IDs, just to be safe.
+	Enhance error messages for appErrEncryptionFailed and
+	appErrNotConnected.  Add message for appErrTrialExpired and
+	appErrConnTerminated.
+	
+	* src/Sections.h: Section 2 overflowed yet again in the debug build.
+	* Sections.def: Add sec4.
+
+2006-07-05  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Fancy new icons.  Uploaded to PalmGear.
+	
+	* rsc/BlueRemote.xrd: Update for new icons.  Fix About screen.
+	Fix PalmGear URLs.
+
+	* rsc/AppIcon_Large_X1_1.bmp: Updated.
+	* rsc/AppIcon_Large_X1_8.bmp: Updated.
+	* rsc/AppIcon_Large_X2_8.bmp: Updated.
+	* rsc/AppIcon_Large_X2_16.bmp: Updated.
+	* rsc/bitmaps/AppIcon_Small-1.bmp: Updated.
+	* rsc/bitmaps/AppIcon_Small-8.bmp: Updated.
+	* rsc/AppIcon_Small_X2_16.bmp: New file.
+
+	* doc/License.txt: New file.
+	* marketing/BlueRemote.gif: New file.
+	* marketing/Screenshot.gif: New file.
+	* marketing/Screenshot.xcf: New file.
+	* marketing/desc.html: New file.
+	* marketing/desc.txt: New file.
+	* marketing/icon.xcf: New file.
+	* marketing/largeicon.bmp: New file.
+	* marketing/smallicon.bmp: New file.
+	
+	* DRM/RegistrationCode.java: Split up and moved to below:
+	* DRM/hu/fnord/palm/drm/test.java: New file.
+	* DRM/hu/fnord/palm/drm/SHA1.java: New file.
+	* DRM/hu/fnord/palm/drm/RegistrationCode.java: New file.
+	* DRM/hu/fnord/palm/drm/PalmGear.java: New file.
+
+	* src/Config.h (DISABLE_BLUETOOTH): New define.
+	* src/Bluetooth.c: Add (untested) support for DISABLE_BLUETOOTH.
+	Useful for testing/capturing the UI in the Simulator.
+
+	* custom.mk (release): New target.
+	* Makefile (OPTIMIZE_LEVEL): Set to FULL.
+	(DEBUG_OR_RELEASE): Set to Release.
+
+	* src/Log.c (f_Alert): Restore g_lock correctly.
+	* src/DRM.c (f_DRMRegisterForm): Initialize msg.
+
+2006-07-04  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Fix DRM mechanisms.  Production-ready registration mechanism.
+	Implement fancy multiple-button, multiple-paragraph, elastic modal
+	popup forms with headers.  Clean up resources.
+
+	* src/UITools.h (DrawText): Update.
+	(PopupForm): Declare.
+
+	* src/UITools.c: Include FrmGlue.h.
+	(PopupFormHandleEvent, DrawHeaderPlusText): New static functions.
+	(f_DrawText): Add draw option.  Handle newlines in text.
+	(f_PopupForm): New function.
+
+	* src/Tools.h (MINUTES, HOURS, DAYS): New constants.
+
+	* src/SHA1.h (SECTION): Define.
+
+	* src/ProgressForm.c (DrawTitle, DrawDetail, DrawDevname)
+	(DrawMsg): Update callers of DrawText.
+	(f_ProgressStop): Call FrmRestoreActiveState after FrmEraseForm.
+	Fixes some redrawing problems.
+
+	* src/Main.c (AppInit): Call DRMInit and DRMAppStart before the
+	Bluetooth stuff.
+	(AppEventLoop): Handle CmdShowWelcome.
+
+	* src/KeyboardForm.c (keyboardFormDesc, KeyboardFormHandleEvent): 
+	Don't refer to deleted menu entries.
+	* src/MouseForm.c (mouseFormDesc): Ditto.
+
+	* src/Error.h (appErrTrialExpired): New constant.
+
+	* src/DRM.h (MINUTES, HOURS, DAYS, DRM_INITIAL_STARTUPS)
+	(DRM_INITIAL_TIMEOUT, DRM_NAG_FREQUENCY, DRM_EXPIRATION)
+	(DRM_PARTNER): Move constants elsewhere.
+	(DRMRegisterForm): Declare.
+
+	* src/DRM.c: Include FrmGlue.h and BlueRemote_res.h.  Add missing
+	declarations.  Remove DRM prefix from static functions.
+	(DRM_INITIAL_STARTUPS, DRM_INITIAL_TIMEOUT, DRM_NAG_FREQUENCY)
+	(DRM_EXPIRATION, DRM_PARTNER, APPEMAIL): New constants.
+	(Cleanup): Fix case conversion.  D'oh!
+	(Verify): Calculate val as well as checksum.  D'oh!
+	(f_DRMAppStart): Use PopupForm to display fancy messages.  Call
+	DRMRegisterForm when appropriate.
+	(EmptyFormEventHandler): New static function.
+	(f_DRMAppStart): New function.
+
+	* src/ConnectForm.c (ConnectFormHandleEvent) [menuOpenEvent]:
+	Update menu items.
+	(ConnectFormHandleEvent) [frmOpenEvent]: Enqueue CmdShowWelcome if
+	device list is empty.
+
+	* src/Commands.h (CmdShowWelcome): New command.
+
+	* src/AppMenu.c (AppMenuDoCommand): Update to reflect menu changes.
+
+	* rsc/BlueRemote.xrd: Add RegistrationForm and RegisteredForm.
+	Remove unused forms S1WelcomeForm and S3Connected.  Add navigation
+	resources for RegistrationForm and ProgressForm.  Remove
+	references to nonexistent screens.  Fix email address on
+	AboutForm.  Rename "Select Device..." menu item to "Add
+	Device...".  Remove "Switch class" item from Options menu.
+	Add "Register" to Options menu.
+
+	* Makefile (ADDITIONAL_LINK_LIBRARIES): Link with -lPalmOSGlue.
+
+	* DRM/RegistrationCode.java (cleanup): Fix case conversion.  D'oh!
+	(getValue): Clean up digest to int array conversion.
+	(main): Announce result of verification.
+
+2006-07-03  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Add SHA1 implementation, somewhat tested.  Add preliminary DRM.
+	
+	* src/DRM.h: New file.
+	* src/DRM.c: New file.
+
+	* src/SHA1.h: New file.
+	* src/SHA1.c: New file.
+
+	* src/Tools.h (SWAP16, SWAP32): Rewrite as inline functions.
+	(ROL, ROR): New inline functions.
+	(CPU2BIG16, CPU2BIG32, CPU2LITTLE16, CPU2LITTLE32, BIG2CPU16)
+	(BIG2CPU32, LITTLE2CPU16, LITTLE2CPU32): New macros.
+
+	* src/Sections.h (SHA1_SECTION, DRM_SECTION): New constants.
+
+	* src/Main.c (AppInit): Call f_DRMInit.
+	(AppStart): Refuse to start if DRMAppStart says so.
+	(AppClose): Call DRMClose.
+	(PilotMain): Don't start the event loop if AppStart fails.
+
+	* src/CoreHeaders.h: Include SHA1.h and DRM.h.
+
+	* src/Common.h (drm): Add DRM members to Globals structure.
+
+	* Makefile (SOURCES): Add SHA1.c and DRM.c.
+	(ADDITIONAL_COMPILER_FLAGS): Add -Winline.
+
+2006-07-02  Lőrentey Károly  <lorentey@fnord.hu>
+
+	Autoconnect.  Fancy navigation on the connect form.  Give border
+	to progress form.   Bluetooth init and error handling tweaks.
+
+	* src/Pref.h (prefUnsavedVersionNum): Add SPREF (autoconnect).
+	Increment version numbers.
+
+	* src/Pref.c (PrefSavedReset): Initialize SPREF (autoconnect).
+
+	* src/ConnectForm.c (UpdateDeviceList): Fix list drawing when
+	there is no selection.	
+	(ConnectFormHandleEvent): Implement 5-way navigation.  Cool!
+
+	* src/DevList.c (f_DevListSelected, f_DevListSetSelected):
+	Increment modnum when changing selection.
+
+	* src/ProgressForm.c (detailBounds, devnameBounds, bitmapBounds)
+	(msgBounds): Update bounds to reflect new form design.
+	(StartAnimate): Start scanning animation from the middle.
+	(StopAnimate): Speed up farewell animation.
+	(f_ProgressStart): Always redraw form and disable hard keys.
+	(f_WaitForQueue, f_WaitForResult): Moved to Bluetooth.c.
+
+	* src/ProgressForm.h: Update.
+
+	* src/MouseForm.c (MouseFormHandleEvent): Make frmOpenEvent and
+	frmUpdateEvent equivalent.
+
+	* src/Main.c (Connect, Wait, Disconnect, Reconnect): New functions.
+	(AppEventLoop): Use them to simplify switch statement.
+	(AppInit): Call HardKeyInit and set up a progress bar before
+	calling BTInit.	 Fix error handling.
+	(AppStart): Add support for autoconnect.
+
+	* src/KeyboardForm.c (UpdateModifierState): Add force option.
+	(KeyboardFormHandleEvent): Use it when redrawing form.	Make
+	frmOpenEvent and frmUpdateEvent equivalent.
+	(KeyboardInitForm): Call UpdateModifierState with force set.
+
+	* src/HardKeys.c (TreoNotifyCallback): Never override
+	Power/Launch/Menu keys.
+
+	* src/Error.h (appErrEncryptionFailed): Fix definition.
+	(appErrNotConnected): New constant.
+
+	* src/Commands.h (AsyncKind): Add AsyncRadio and AsyncSend.
+	(CmdChannelConnectedInbound, CmdSendFailed, CmdDataSent)
+	(CmdDataReceived): Remove.
+
+	* src/Bluetooth.c (WaitForResult, WaitForQueue): New functions,
+	moved here from progressForm.c.	 Update callers.
+	(f_BTInit): Wait for result of BtLibOpen and accessible mode
+	change.
+	(f_BTClose): Ditto.  Free message queues.  (D'oh!)
+	(f_BTWait): New function.
+	(f_BTHandleEvent): Switch on CmdAsyncKind.  Handle radio events.
+	(f_BTConnect): Improve logging.	 Disable encryption warning.
+	(BTManagementCallback): Send AsyncRadio events.	 Improve logging.
+	(BTSocketCallback): Send AsyncConnect and AsyncSend events.
+	(LinkDisconnect): Improve logging.
+	(Disconnect): Flush inqueue as well.
+	(DataCleanup): Set status to 0.
+	(f_BTStrError): Export function.  (Probably temporary.)	 Remove
+	old list of strings.
+	(f_BTPublishSDPServiceRecord): Make static, rename to
+	PublishSDPServiceRecord.
+
+	* src/Bluetooth.h: Update.
+
+	* rsc/BlueRemote.xrd: Clean up by removing unused forms.  Give
+	border to progress form.  Add error string resources.
+
+2006-07-01  Lőrentey Károly <lorentey@fnord.hu>
+
+	On the Mouse Form, make the 5-way navigator generate pointer
+	events instead of cursor events.
+
+	Add a sysNotifyEventDequeuedEvent for the Treo to prevent the
+	Ringer Volume form and Butler's navigation features from
+	interfering with our fancy hard key handling.
+
+	Add SPREF (hardkeyOverride) in Pref.h, SWAP16 and SWAP32 in Tools.h
+
+2006-06-30  Lőrentey Károly <lorentey@fnord.hu>
+
+	Add WaitForResult for emulating synchronous Bluetooth operations.
+	Rewrite/simplify Bluetooth connection/disconnection with
+	WaitForResult. (Needs more cleanup.)
+	Add Error.h.
+
+2006-06-27  Lőrentey Károly <lorentey@fnord.hu>
+
+	Implemented Heap, Timer, DevList and ProgressForm.
+
+	Asynchronous animations and timeouts.
+
+	Unsticking modifiers.
+
+	New Task button on Keyboard form.
+
+	Maximize logfile size to prevent filling up and crashing the
+	device.
+
+	Fix an enormous number of crashes, and introduce interesting new
+	ones.
+
+	Add fancy DrawText function with support for left/right/center
+	justification.
+
+	Add support for release build configuration in Config.h.
+
+	Reformat source code.
+
+2006-06-23  Lőrentey Károly <lorentey@fnord.hu>
+
+	Fully working hard keys and Graffiti input.  Fully usable UI.
+	Many many tweaks.
+
+2006-06-21  Lőrentey Károly <lorentey@fnord.hu>
+
+	Implement hard key processing.	Way cool! (Tested on Treo 650 only)
+
+2006-06-20  Lőrentey Károly <lorentey@fnord.hu>
+
+	Request encryption on connect to fix Windows reconnections.
+	Other tweaks.
+
+2006-06-17  Lőrentey Károly <lorentey@fnord.hu>
+
+	Core system overhaul for device-initiated reconnect support and
+	background operation.
+
+2006-06-15  Lőrentey Károly <lorentey@fnord.hu>
+
+	Initial import.
+
+	Add ignore patterns for build results.

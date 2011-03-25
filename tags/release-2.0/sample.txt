@@ -1,0 +1,233 @@
+Marcel,
+ 
+ Here we go:
+ 
+ root@(none):/usr/bin# hcitool inq
+ Inquiring ...
+          00:02:72:40:8A:97       clock offset: 0x4a58    class: 0x002540
+ 
+ root@(none):/usr/bin# hcitool info 00:02:72:40:8A:97
+ Requesting information ...
+ bcsp_timed_event: Timeout, retransmitting 1 pkts
+          BD Address:  00:02:72:40:8A:97
+          Device Name: BlueLogic Keyboard
+          LMP Version: 1.1 (0x1) LMP Subversion: 0x1a5
+          Manufacturer: Cambridge Silicon Radio (10)
+          Features: 0xff 0xff 0x0f 0x00 0x00 0x00 0x00 0x00
+                  <3-slot packets> <5-slot packets> <encryption> <slot offset>
+                  <timing accuracy> <role switch> <hold mode> <sniff mode>
+                  <park state> <RSSI> <channel quality> <SCO link> <HV2 packets>
+                  <HV3 packets> <u-law log> <A-law log> <CVSD> <paging scheme>
+                  <power control> <transparent SCO>
+ 
+ 
+ The website is http://www.bluelogic.co.kr/main_eng.php
+ 
+ I have attached the sdp records file.
+ 
+ Michael
+ 
+ 
+ 
+ Sequence
+        Attribute 0x0000 - Service record handle
+                UINT32 0x00010000
+        Attribute 0x0001 - Service class ID list
+                Sequence
+                        UUID16 0x1124 - Human Interface Device Service
+        Attribute 0x0004 - Protocol descriptor list
+                Sequence
+                        Sequence
+                                UUID16 0x0100 - L2CAP
+                                UINT16 0x0011
+                        Sequence
+                                UUID16 0x0011 - HIDP
+        Attribute 0x0006 - Language base attribute ID list
+                Sequence
+                        UINT16 0x656e
+                        UINT16 0x006a
+                        UINT16 0x0100
+        Attribute 0x0009 - Bluetooth profile descriptor list
+                Sequence
+                        Sequence
+                                UUID16 0x0011 - HIDP
+                                UINT16 0x0100
+        Attribute 0x000d - Additional protocol descriptor lists
+                Sequence
+                        Sequence
+                                UUID16 0x0100 - L2CAP
+                                UINT16 0x0013
+                        Sequence
+                                UUID16 0x0011 - HIDP
+        Attribute 0x0200
+                UINT16 0x0100
+        Attribute 0x0201
+                UINT16 0x0111
+        Attribute 0x0202
+                UINT8 0x40
+        Attribute 0x0203
+                UINT8 0x21
+        Attribute 0x0204
+                Bool True
+        Attribute 0x0205
+                Bool True
+        Attribute 0x0206
+                Sequence
+                        Sequence
+                                UINT8 0x22
+                                String 05 01 09 06 a1 01 85 01 05 07 19 e0 29 e7 15 00 25 01 75 01 95 08 81 02 95 01 75
+08 81 01 95 05 75 01 05 08 19 01 29 05 91 02 95 01 75 03 91 01 95 05 75 08 15 00 25 65 05 07
+19 00 29 ff 81 00 c0 05 01 09 02 a1 01 85 02 09 01 a1 00 05 09 19 01 29 03 15 00 25 01 95 03
+75 01 81 02 95 01 75 05 81 01 05 01 09 30 09 31 09 38 15 81 25 7f 95 03 75 08 81 06 c0 c0 05
+0c 09 01 a1 01 85 03 15 00 25 01 09 e9 09 ea 75 01 95 02 81 02 95 06 81 01 c0 05 01 09 80 a1
+01 85 04 19 81 29 83 15 00 25 01 75 01 95 03 81 02 75 05 95 01 81 01 c0 05 0c 09 01 a1 01 85
+05 95 08 75 01 15 00 25 01 0a 93 01 0a cd 00 0a b7 00 0a e2 00 0a ea 00 0a e9 00 0a 2a 02 0a
+23 02 81 02 05 0c 0a 27 02 0a 8a 01 0a 26 02 15 00 25 01 95 03 75 01 81 02 95 05 75 01 81 01
+c0
+        Attribute 0x0207
+                Sequence
+                        Sequence
+                                UINT16 0x0309
+                                UINT16 0x0100
+        Attribute 0x0208
+                Bool False
+        Attribute 0x0209
+                Bool True
+        Attribute 0x020a
+                Bool True
+        Attribute 0x020b
+                UINT16 0x0100
+        Attribute 0x020c
+                UINT16 0x1f40
+        Attribute 0x020d
+                Bool False
+        Attribute 0x020e
+                Bool True
+ 
+
+
+
+
+
+**********************************************************************
+
+01 09          USAGE PAGE (0x01 1)				
+06 a1          USAGE (0x06 6)					
+01 85          COLLECTION (0x01 1)				
+01 05              REPORT ID (0x01 1)
+07 19              USAGE PAGE (0x07 7)
+e0 29              USAGE MINIMUM (0xe0 224)
+e7 15              USAGE MAXIMUM (0xe7 231)
+00 25              LOGICAL MINIMUM (0x00 0)
+01 75              LOGICAL MAXIMUM (0x01 1)
+01 95              REPORT SIZE (0x01 1)
+08 81              REPORT COUNT (0x08 8)
+02 95              INPUT (0x02 2)
+01 75              REPORT COUNT (0x01 1)
+08 81              REPORT SIZE (0x08 8)
+01 95              INPUT (0x01 1)
+05 75              REPORT COUNT (0x05 5)
+01 05              REPORT SIZE (0x01 1)
+08 19              USAGE PAGE (0x08 8)
+01 29              USAGE MINIMUM (0x01 1)
+05 91              USAGE MAXIMUM (0x05 5)
+02 95              OUTPUT (0x02 2)
+01 75              REPORT COUNT (0x01 1)
+03 91              REPORT SIZE (0x03 3)
+01 95              OUTPUT (0x01 1)
+05 75              REPORT COUNT (0x05 5)
+08 15              REPORT SIZE (0x08 8)
+00 25              LOGICAL MINIMUM (0x00 0)
+65 05              LOGICAL MAXIMUM (0x65 101)
+07 19              USAGE PAGE (0x07 7)
+00 29              USAGE MINIMUM (0x00 0)
+ff 81              USAGE MAXIMUM (0xff 255)
+00 c0              INPUT (0x00 0)
+c0             END_COLLECTION 
+01 09          USAGE PAGE (0x01 1)
+02 a1          USAGE (0x02 2)
+01 85          COLLECTION (0x01 1)
+02 09              REPORT ID (0x02 2)
+01 a1              USAGE (0x01 1)
+00 05              COLLECTION (0x00 0)
+09 19                  USAGE PAGE (0x09 9)
+01 29                  USAGE MINIMUM (0x01 1)
+03 15                  USAGE MAXIMUM (0x03 3)
+00 25                  LOGICAL MINIMUM (0x00 0)
+01 95                  LOGICAL MAXIMUM (0x01 1)
+03 75                  REPORT COUNT (0x03 3)
+01 81                  REPORT SIZE (0x01 1)
+02 95                  INPUT (0x02 2)
+01 75                  REPORT COUNT (0x01 1)
+05 81                  REPORT SIZE (0x05 5)
+01 05                  INPUT (0x01 1)
+01 09                  USAGE PAGE (0x01 1)
+30 09                  USAGE (0x30 48)
+31 09                  USAGE (0x31 49)
+38 15                  USAGE (0x38 56)
+81 25                  LOGICAL MINIMUM (0x81 129)
+7f 95                  LOGICAL MAXIMUM (0x7f 127)
+03 75                  REPORT COUNT (0x03 3)
+08 81                  REPORT SIZE (0x08 8)
+06 c0                  INPUT (0x06 6)
+c0                 END_COLLECTION 
+c0             END_COLLECTION 
+0c 09          USAGE PAGE (0x0c 12)
+01 a1          USAGE (0x01 1)
+01 85          COLLECTION (0x01 1)
+03 15              REPORT ID (0x03 3)
+00 25              LOGICAL MINIMUM (0x00 0)
+01 09              LOGICAL MAXIMUM (0x01 1)
+e9 09              USAGE (0xe9 233)
+ea 75              USAGE (0xea 234)
+01 95              REPORT SIZE (0x01 1)
+02 81              REPORT COUNT (0x02 2)
+02 95              INPUT (0x02 2)
+06 81              REPORT COUNT (0x06 6)
+01 c0              INPUT (0x01 1)
+c0             END_COLLECTION 
+01 09          USAGE PAGE (0x01 1)
+80 a1          USAGE (0x80 128)
+01 85          COLLECTION (0x01 1)
+04 19              REPORT ID (0x04 4)
+81 29              USAGE MINIMUM (0x81 129)
+83 15              USAGE MAXIMUM (0x83 131)
+00 25              LOGICAL MINIMUM (0x00 0)
+01 75              LOGICAL MAXIMUM (0x01 1)
+01 95              REPORT SIZE (0x01 1)
+03 81              REPORT COUNT (0x03 3)
+02 75              INPUT (0x02 2)
+05 95              REPORT SIZE (0x05 5)
+01 81              REPORT COUNT (0x01 1)
+01 c0              INPUT (0x01 1)
+c0             END_COLLECTION 
+0c 09          USAGE PAGE (0x0c 12)
+01 a1          USAGE (0x01 1)
+01 85          COLLECTION (0x01 1)
+05 95              REPORT ID (0x05 5)
+08 75              REPORT COUNT (0x08 8)
+01 15              REPORT SIZE (0x01 1)
+00 25              LOGICAL MINIMUM (0x00 0)
+01 0a              LOGICAL MAXIMUM (0x01 1)
+93 01 0a           USAGE (0x0193 403)
+cd 00 0a           USAGE (0x00cd 205)
+b7 00 0a           USAGE (0x00b7 183)
+e2 00 0a           USAGE (0x00e2 226)
+ea 00 0a           USAGE (0x00ea 234)
+e9 00 0a           USAGE (0x00e9 233)
+2a 02 0a           USAGE (0x022a 554)
+23 02 81           USAGE (0x0223 547)
+02 05              INPUT (0x02 2)
+0c 0a              USAGE PAGE (0x0c 12)
+27 02 0a           USAGE (0x0227 551)
+8a 01 0a           USAGE (0x018a 394)
+26 02 15           USAGE (0x0226 550)
+00 25              LOGICAL MINIMUM (0x00 0)
+01 95              LOGICAL MAXIMUM (0x01 1)
+03 75              REPORT COUNT (0x03 3)
+01 81              REPORT SIZE (0x01 1)
+02 95              INPUT (0x02 2)
+05 75              REPORT COUNT (0x05 5)
+01 81              REPORT SIZE (0x01 1)
+01 c0              INPUT (0x01 1)
+c0             END_COLLECTION 
